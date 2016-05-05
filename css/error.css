@@ -1,0 +1,348 @@
+/*
+ * TODO make responsive (beError sizes based on vw)
+ * TODO adjust design to splash v7
+ * TODO make blink a CSS animation (16 toggles, max 500ms, min every 50ms)
+ * -> duration: 16 * (550/2) = 4200ms, toggles spread throughout
+ */
+html, body {
+	padding: 0;
+	margin: 0;
+	min-height: 100%;
+}
+
+body {
+	color: #ccc;
+	background-color: #2A2A2A;
+	font-family: sans-serif;
+}
+
+.wrapper {
+	display: flex;
+    flex-flow: column;
+    min-height: 100%;
+    min-height: 100vh;
+}
+
+a  {
+    color: #ccc;
+}
+
+main {
+	margin: 0 auto;
+	max-width: 591px;
+	padding: 0 2em;
+	flex: 1 0;
+}
+
+
+h1 {
+	font-size: 3.5em;
+	margin-top: 2rem;
+}
+
+#be {
+	font-size: calc(1.74 * (100vw - 6rem)/8);
+	height: 1em;
+	margin: 2rem auto;
+
+	background-color: #222;
+    border: 1px solid #111;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+#be .character {
+	position: relative;
+	display: inline-block;
+	height: 1em;
+	width: 0.567em;
+	padding-left: 0.017em;
+	margin-left: -0.2em;
+}
+
+#be .character:nth-child(2) {
+	margin-left: 0 !important;
+}
+
+#be .character span {
+	box-shadow: 0 0 5px #FFC400;
+	-webkit-box-shadow: 0 0 5px #FFC400;
+	background: #FFC336;
+	display: block;
+	position: absolute;
+
+	opacity: 0.05;
+	-webkit-transition-property: opacity;
+	-webkit-transition-duration: .13s;
+	-o-transition-property: opacity;
+	-o-transition-duration: .13s;
+	-ms-transition-property: opacity;
+	-ms-transition-duration: .13s;
+	transition-property: opacity;
+	transition-duration: .13s;
+}
+
+.horizontal {
+	height: 0.1em;
+	width: 0.3em;
+
+	margin: 0.017em 0.133em;
+}
+
+.vertical {
+	height: 0.3em;
+	width: 0.1em;
+
+	margin: 0.133em 0.017em;
+}
+
+.diagonal {
+	height: 0.3em;
+	width: 0.05em;
+
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+
+	margin: 0.017em;
+}
+
+.antigonal {
+	height: 0.3em;
+	width: 0.05em;
+
+	-webkit-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+
+	margin: 0.017em;
+}
+
+.horizontal.top {
+	top: 0;
+}
+
+.vertical.top {
+	top: 0.016em;
+}
+
+.vertical.middle {
+	top: 0.467em;
+}
+
+.diagonal.middle,
+.antigonal.middle {
+	top: 0.567em;
+}
+
+.horizontal.middle {
+	top: 0.45em;
+}
+
+.bottom {
+	top: 0.9em;
+}
+
+.vertical.left {
+	left: 0;
+}
+
+.diagonal.left,
+.antigonal.left {
+	left: 0;
+}
+
+.horizontal.left {
+	left: 0.016em;
+}
+
+.vertical.right {
+	left: 0.45em;
+}
+
+.diagonal.right,
+.antigoanl.right {
+	left: 0.267em;
+}
+
+.character span:not(.antigonal):not(.diagonal)::before,
+.character span:not(.antigonal):not(.diagonal)::after {
+	content: '';
+	height: 0.07em;
+	width: 0.07em;
+
+	background: #FFC336;
+	position: absolute;
+}
+
+.horizontal::before {
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+
+	box-shadow: -1px 1px 5px #FFC400;
+	-webkit-box-shadow: -1px 1px 5px #FFC400;
+
+	top: 0.015em;
+	margin-right: -0.035em;
+	right: 100%;
+}
+
+.horizontal::after {
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+
+	box-shadow: 1px -1px 5px #FFC400;
+	-webkit-box-shadow: 1px -1px 5px #FFC400;
+
+	top: 0.016em;
+	right: -0.033em;
+}
+
+.vertical::before {
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+
+	box-shadow: -1px -1px 5px #FFC400;
+	-webkit-box-shadow: -1px -1px 5px #FFC400;
+
+	top: -0.035em;
+	left: 0.015em;
+}
+
+.vertical::after {
+	-webkit-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+
+	box-shadow: 1px 1px 5px #FFC400;
+	-webkit-box-shadow: 1px 1px 5px #FFC400;
+
+	left: 0.015em;
+	bottom: -0.035em;
+}
+
+#be .character span.used:not(.blink) {
+	animation: .5s .5s lighton both;
+}
+
+.blink {
+	animation: 4200ms .4s blink;
+}
+
+.sr-only {
+	height: 0;
+	width: 0;
+	position: absolute;
+	box-sizing: border-box;
+	display: block;
+	overflow: hidden;
+	color: transparent;
+}
+
+footer {
+	padding: 1em 2em;
+
+    background-color: #222;
+    border-top: 1px solid #111;
+
+    line-height: 1.2;
+    font-size: .8em;
+	text-align: right;
+}
+
+@keyframes lighton {
+	form {
+		opacity: 0 !important;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+
+	5% {
+		opacity: 1;
+	}
+
+	13.5% {
+		opacity: 0;
+	}
+
+	16% {
+		opacity: 0.8;
+	}
+
+	18% {
+		opacity: 0;
+	}
+
+	23% {
+		opacity: 1;
+	}
+
+	26% {
+		opacity: 0;
+	}
+
+	35% {
+		opacity: 1;
+	}
+
+	41% {
+		opacity: 0;
+	}
+
+	44% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	61% {
+		opacity: 1;
+	}
+
+	69% {
+		opacity: 0;
+	}
+
+	74% {
+		opacity: 1;
+	}
+
+	76% {
+		opacity: 0;
+	}
+
+	88% {
+		opacity: 1;
+	}
+
+	90% {
+		opacity: 0;
+	}
+
+	94% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@media (min-width: 650px) {
+	#be {
+		font-size: 115px;
+	}
+}

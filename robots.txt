@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /lab/
+Disallow: /liiribaenz/
+Sitemap: https://humanoids.be/sitemap.xml

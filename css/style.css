@@ -1,0 +1,357 @@
+/* Global styling */
+
+html, body, ul, li {
+    padding: 0;
+    margin: 0;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+html, body {
+    font-family: sans-serif;
+    color: #111;
+    height: 100%;
+
+    scroll-snap-type: mandatory;
+}
+
+.flex-container {
+    min-height: 100%;
+}
+
+/* hidden "polyfill" (as if there was any browser that supports attribute
+   selectors but the hidden attribute doesn't work) */
+['hidden'] {
+    display: none;
+    visibility: hidden;
+}
+
+/* Styles for the navigation header/sidebar */
+
+main, .sidebar {
+    width: 100%;
+}
+
+.sidebar {
+    background-color: #2A2A2A;
+    display: flex;
+    flex-flow: column;
+}
+
+.sidebar nav, .sidebar footer {
+    padding: 1em 2em;
+}
+
+.sidebar, .sidebar a:link, .sidebar a:visited {
+    color: #ccc;
+}
+
+.sidebar .menuitem, .watermark {
+    list-style-type: none;
+}
+
+/* Make the service icons appear in the correct font */
+.icon {
+    fill: currentColor;
+    height: .9em;
+    width: .9em;
+}
+
+/* Make sure the /|H|\ is upscaled properly on hidpi screens */
+.watermark {
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+}
+
+/* Main navigation with the links to different related content */
+
+.sidebar nav {
+    flex: 1 0 27.2em;
+    scroll-snap-coordinate: 0 0;
+}
+
+.sidebar nav .menuitem:not(:last-child) {
+    border-bottom: 1px solid #111;
+}
+
+.sidebar nav .menuitem:hover {
+    background-color: #222;
+}
+
+.sidebar nav a {
+    display: block;
+    line-height: 3.2;
+    padding: 0 1em;
+}
+
+.sidebar nav a:link, .sidebar nav a:visited {
+    text-decoration: none;
+}
+
+
+.profile.menuitem img {
+    height: 2em;
+    width: 2em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    border: 1px solid #111;
+    margin-left: 1em;
+    vertical-align: middle;
+}
+
+.profile.menuitem a {
+    font-size: 1.3em;
+    display: inline;
+    vertical-align: middle;
+}
+
+/* Sidebar footer at the bottom of the header/navigation */
+
+.sidebar footer {
+    flex-basis: 2em;
+
+    padding-bottom: 2em;
+
+    background-color: #222;
+    border-top: 1px solid #111;
+}
+
+.sidebar footer ul {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.sidebar footer .menuitem {
+    line-height: 1.2;
+    font-size: .8em;
+}
+
+.sidebar footer .menuitem:not(:last-child) {
+    padding-right: .4em;
+    border-right: 1px solid #111;
+    margin-right: .4em;
+}
+
+.sidebar foter a:link, .sidebar footer a:visited {
+    text-decoration: underline;
+}
+
+/* Main content  with an image as background and some text */
+main {
+    background-size: cover;
+    background-position: center;
+	background-color: orange;
+
+    padding: 2em 0;
+    min-height: 100%;
+    min-height: 100vh;
+    min-height: calc(100vh - 4em);
+
+    display: flex;
+    flex-direction: column;
+
+    scroll-snap-coordinate: 0 550px;
+}
+
+main:not(.projects) {
+    flex-direction: column-reverse;
+}
+
+main .panel {
+    padding: 1em;
+    margin: 0 2em;
+
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+main h2 {
+    margin-top: 0;
+    margin-left: 1rem;
+}
+
+/* Don't space the first and last p further, so columns and the box padding don't make it look bad */
+main section p:first-child {
+    margin-top: 0;
+}
+
+main section p:last-child {
+    margin-bottom: 0;
+}
+
+/* background images for the different content pages */
+main.profile {
+    background-image: url('../img/profile_1059x600.jpg');
+}
+
+main.about {
+    background-image: url('../img/about_963x600.jpg');
+}
+
+/* projects styles */
+.projectlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 1em 0;
+}
+
+.project {
+    margin: 0 0 2px 0;
+    padding: 0;
+}
+
+.project a, .project a:link {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.project a, .project a:link, .project a:hover, .project a:active, .project a:visited {
+    color: #111;
+    text-decoration: none;
+    outline: none;
+    display: block;
+    transition: .2s background-color;
+}
+
+.project a:hover, .project a:active, .project a:focus {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.project figure {
+    padding: 0;
+    margin: 0;
+    min-height: 5em;
+}
+
+.project figure img {
+    height: 5em;
+    vertical-align: middle;
+    float: left;
+    margin-right: 1em;
+}
+
+.project figure figcaption {
+    padding: .4em 1em .6em;
+}
+
+.project figure figcaption p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.project figure figcaption i {
+    font-style: italic;
+    color: #444;
+}
+
+/* Stylesheets for big screens. Moves the content section to the right and the menu
+   and divides the content text into two columns */
+@media (min-width: 800px) {
+    html, body {
+        scroll-snap-type: none;
+    }
+
+    .flex-container {
+        display: flex;
+    }
+
+    .sidebar {
+        flex-grow: 1;
+        flex-basis: 450px;
+        min-height: 29.2em;
+    }
+    main {
+        flex-grow: 4;
+    }
+
+    main section:not(#projects) {
+        -moz-columns: 2;
+        -webkit-columns: 2;
+        columns: 2;
+    }
+
+    .projectlist {
+        margin: 0;
+    }
+
+    .project {
+        margin: 0 0 1em 1em;
+        display: inline-block;
+        box-shadow: 0 0 2px #2a2a2a;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .project figure img {
+        width: 256px;
+        height: 144px;
+        margin-right: 0;
+        float: none;
+    }
+}
+
+/* TODO load higher resolutions for higher DPIs */
+@media (max-width: 1027px), (max-height: 640px) {
+    main.profile {
+        background-image: url('../img/profile_1130x640.jpg');
+    }
+
+	main.about {
+		background-image: url('../img/about_1027x640.jpg');
+	}
+}
+
+@media (max-width: 1284px), (max-height: 800px) {
+    main.profile {
+        background-image: url('../img/profile_1412x800.jpg');
+    }
+
+	main.about {
+		background-image: url('../img/about_1284x800.jpg');
+	}
+}
+
+@media (max-width: 1444px), (max-height: 900) {
+    main.profile {
+        background-image: url('../img/profile_1588x900.jpg');
+    }
+
+	main.about {
+		background-image: url('../img/about_1444x900.jpg');
+	}
+}
+
+@media (max-width: 1555px), (max-height: 969px) {
+    main.profile {
+        background-image: url('../img/profile_1710x969.jpg');
+    }
+
+	main.about {
+		background-image: url('../img/about_1555x969.jpg');
+	}
+}
+
+@media (min-width: 1555px), (min-width: 969px) {
+    main.profile {
+        background-image: url('../img/profile.jpg');
+    }
+
+	main.about {
+		background-image: url('../img/about.jpg');
+	}
+}
+
+/* Icon font with service icons */
+@font-face {
+  font-family: 'beicons';
+  src: url('../font/beicons.eot?30012709');
+  src: url('../font/beicons.eot?30012709#iefix') format('embedded-opentype'),
+       url('../font/beicons.woff?30012709') format('woff'),
+       url('../font/beicons.ttf?30012709') format('truetype'),
+       url('../font/beicons.svg?30012709#beicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

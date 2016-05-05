@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Error: Page not found</title>
+
+	<link rel="stylesheet" href="/css/error.css" type="text/css">
+</head>
+<body>
+	<div class="wrapper">
+		<main>
+			<header id="be">
+				<h1 class="sr-only">Error</h1>
+				<!-- To be honest: this should be in an SVG font. -->
+				<div class="character" alt="b">
+					<!--SEGMETS: add used class to light up segment -->
+					<span class="top left horizontal"></span>
+					<span class="top left vertical used"></span>
+					<span class="top right vertical"></span>
+
+					<span class="middle left horizontal used"></span>
+					<span class="middle left vertical used blink"></span>
+					<span class="middle right diagonal"></span>
+					<span class="middle right vertical used"></span>
+
+					<span class="bottom left horizontal used"></span>
+				</div>
+				<div class="character" alt="e">
+					<span class="top left horizontal"></span>
+					<span class="top right vertical"></span>
+					<span class="top left vertical"></span>
+
+					<span class="middle left horizontal used"></span>
+					<span class="middle left vertical used"></span>
+					<span class="middle right diagonal used"></span>
+					<span class="middle right vertical"></span>
+
+					<span class="bottom left horizontal used"></span>
+				</div>
+				<div class="character" alt="E">
+					<span class="top left horizontal used"></span>
+					<span class="top right vertical"></span>
+					<span class="top left vertical used"></span>
+
+					<span class="middle left horizontal used"></span>
+					<span class="middle left vertical used"></span>
+					<span class="middle right diagonal"></span>
+					<span class="middle right vertical"></span>
+
+					<span class="bottom left horizontal used"></span>
+				</div>
+				<div class="character" alt="r">
+					<span class="top left horizontal"></span>
+					<span class="top right vertical"></span>
+					<span class="top left vertical"></span>
+
+					<span class="middle left horizontal used"></span>
+					<span class="middle left vertical used"></span>
+					<span class="middle right diagonal"></span>
+					<span class="middle right vertical"></span>
+
+					<span class="bottom left horizontal"></span>
+				</div>
+				<div class="character" alt="r">
+					<span class="top left horizontal"></span>
+					<span class="top right vertical"></span>
+					<span class="top left vertical"></span>
+
+					<span class="middle left horizontal used"></span>
+					<span class="middle left vertical used"></span>
+					<span class="middle right diagonal"></span>
+					<span class="middle right vertical"></span>
+
+					<span class="bottom left horizontal"></span>
+				</div>
+				<div class="character" alt="o">
+					<span class="top left horizontal"></span>
+					<span class="top right vertical"></span>
+					<span class="top left vertical"></span>
+
+					<span class="middle left horizontal used"></span>
+					<span class="middle left vertical used"></span>
+					<span class="middle right diagonal"></span>
+					<span class="middle right vertical used"></span>
+
+					<span class="bottom left horizontal used"></span>
+				</div>
+				<div class="character" alt="r">
+					<span class="top left horizontal"></span>
+					<span class="top right vertical"></span>
+					<span class="top left vertical"></span>
+
+					<span class="middle left horizontal used"></span>
+					<span class="middle left vertical used"></span>
+					<span class="middle right diagonal"></span>
+					<span class="middle right vertical"></span>
+
+					<span class="bottom left horizontal"></span>
+				</div>
+			</header>
+			<p>This is not the page you're looking for. Look for pages with <a href="http://duckduckgo.com">DuckDuckGo</a></p>
+		</main>
+		<footer>This error is powered by <img src="/img/aha.png" alt="AHA"></footer>
+	</div>
+</body>
+</html>
