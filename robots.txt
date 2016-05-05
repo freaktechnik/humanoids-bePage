@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /lab/
 Disallow: /liiribaenz/
+Disallow: /twitchbots/
 Sitemap: https://humanoids.be/sitemap.xml
