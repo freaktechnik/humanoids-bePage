@@ -28,13 +28,13 @@ body {
 }
 
 h1 {
-	font-family:Radioland;
-	color: #FFC336;
-	font-size: 2.8125em;
+    font-family:Radioland;
+    color: #FFC336;
+    font-size: 2.8125em;
     line-height: 2em;
     text-shadow: #FFC400 0 0 .5em;
 
-	text-align: center;
+    text-align: center;
 
     margin: 0;
     padding: 0 1em;
