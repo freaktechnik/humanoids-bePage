@@ -177,13 +177,13 @@ main article {
     flex-direction: column;
 }
 
-main article:not(:target) {
+main article:not(:target):not(.default), body.ready:not(.empty) .default:not(:target) {
     display: none;
     visibility: hidden;
 }
 
 .empty .default {
-    display: block;
+    display: flex;
     visibility: visible;
 }
 
