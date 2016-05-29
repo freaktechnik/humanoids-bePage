@@ -22,5 +22,5 @@ var applyChange = function(e) {
     document.body.className = location.hash == "" ? "empty ready" : "ready";
 };
 window.onhashchange = applyChange;
-window.onload = applyChange;
+applyChange();
 
