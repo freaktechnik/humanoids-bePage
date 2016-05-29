@@ -177,14 +177,9 @@ main article {
     flex-direction: column;
 }
 
-main article:not(:target):not(.default), body.ready:not(.empty) .default:not(:target) {
+main article:not(:target):not(.default), #projects:target ~ .default, #about:target ~ .default {
     display: none;
     visibility: hidden;
-}
-
-.empty .default {
-    display: flex;
-    visibility: visible;
 }
 
 .panel-container {
