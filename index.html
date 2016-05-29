@@ -135,19 +135,21 @@
                 </ul>
             </footer>
         </header>
-        <main class="profile">
-            <section id="profile" class="panel" itemscope itemtype="http://schema.org/Person">
-                <span itemprop="jobTitle">Student</span><br>
-                <address class="h-card">
-                    <a class="u-email" itemprop="email" href="mailto:martin@humanoids.be" rel="me">martin@humanoids.be</a><br>
-                    <a class="u-im" href="xmpp:freaktechnik@swissjabber.ch?message" rel="me">freaktechnik@swissjabber.ch</a>
-                    <p class="h-addr p-addr" itemprop="address" itemtype="http://schema.org/PostalAddress">
-                        <span class="p-name" itemprop="name"><span class="p-given-name" itemprop="givenName">Martin</span> <span class="p-family-name" itemprop="familyName">Giger</span></span><br>
-                        <span class="p-country-name" itemprop="nationality">Schweiz</span>
-                    </p>
-                </address>
-            </section>
-            <section id="projects" hidden>
+        <main>
+            <article id="profile" itemscope itemtype="http://schema.org/Person" class="panel-container default">
+                <section class="panel">
+                    <span itemprop="jobTitle">Student</span><br>
+                    <address class="h-card">
+                        <a class="u-email" itemprop="email" href="mailto:martin@humanoids.be" rel="me">martin@humanoids.be</a><br>
+                        <a class="u-im" href="xmpp:freaktechnik@swissjabber.ch?message" rel="me">freaktechnik@swissjabber.ch</a>
+                        <p class="h-addr p-addr" itemprop="address" itemtype="http://schema.org/PostalAddress">
+                            <span class="p-name" itemprop="name"><span class="p-given-name" itemprop="givenName">Martin</span> <span class="p-family-name" itemprop="familyName">Giger</span></span><br>
+                            <span class="p-country-name" itemprop="nationality">Schweiz</span>
+                        </p>
+                    </address>
+                </section>
+            </article>
+            <article id="projects">
                 <h2>Creating</h2>
                 <ul class="projectlist">
                     <li class="project">
@@ -209,13 +211,14 @@
                         </a>
                     </li>
                 </ul>
-            </section>
-            <section id="about" role="contentinfo" class="panel" hidden>
-                <p>Humanoids bePage is licensed under the <a href="LICENSE" rel="license" href-lang="en">GPLv3</a> &copy; 2016 by Martin Giger. See also <a href="jslicenses.html" rel="jslicense">JavaScript License Information</a>.</p>
-                <p>The social media icons used are under the <a href="https://github.com/danleech/simple-icons/blob/gh-pages/LICENSE.md">CC0 license</a> and may represent copyrighted trademarks by the respective social network.</p>
-            </section>
+            </article>
+            <article id="about" role="contentinfo" class="panel-container">
+                <section class="panel">
+                    <p>Humanoids bePage is licensed under the <a href="LICENSE" rel="license" href-lang="en">GPLv3</a> &copy; 2016 by Martin Giger. See also <a href="jslicenses.html" rel="jslicense">JavaScript License Information</a>.</p>
+                    <p>The social media icons used are under the <a href="https://github.com/danleech/simple-icons/blob/gh-pages/LICENSE.md">CC0 license</a> and may represent copyrighted trademarks by the respective social network.</p>
+                </section>
+            </article>
         </main>
     </div>
-    <script type="application/javascript" src="js/script.js"></script>
 </body>
 </html>
