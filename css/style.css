@@ -158,6 +158,10 @@ main, .sidebar {
     text-decoration: underline;
 }
 
+.sidebar footer a {
+    padding-top: 1em;
+}
+
 /* Main content  with an image as background and some text */
 main {
     scroll-snap-coordinate: 0 550px;
@@ -195,6 +199,10 @@ main > article:not(:target):not(.default), main > article:target ~ .default {
     margin: 0 2em;
 
     background-color: rgba(255, 255, 255, 0.8);
+}
+
+.mobile-expand {
+    line-height: 2.5;
 }
 
 article h2 {
@@ -318,6 +326,10 @@ main #about {
         height: 144px;
         margin-right: 0;
         float: none;
+    }
+
+    .mobile-expand {
+        line-height: 1.2;
     }
 }
 
