@@ -72,6 +72,7 @@ h {
     text-shadow: 0 0 5px #FFC400;
     letter-spacing: .07em;
     text-align: center;
+    line-height: 1em;
 }
 
 #be h {
@@ -91,6 +92,7 @@ h {
 	content: "8888888";
 	position: absolute;
 	opacity: 0.05;
+	top: 0;
 }
 
 #be-bg {
