@@ -43,9 +43,10 @@ h1 {
     text-shadow: #FFC400 0 0 .5rem;
 
     text-align: center;
+    letter-spacing: .07em;
 
     margin: 0;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
 }
 
 #wrapper header nav a {
