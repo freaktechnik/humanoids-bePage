@@ -146,6 +146,7 @@ main, .sidebar {
 .sidebar footer .menuitem {
     line-height: 1.2;
     font-size: .8em;
+    margin-top: 1em;
 }
 
 .sidebar footer .menuitem:not(:last-child) {
