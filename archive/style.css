@@ -39,13 +39,13 @@ h1 {
     font-family: 'beFont';
     color: #FFC336;
     font-size: 3.2em;
-    line-height: 2em;
-    text-shadow: #FFC400 0 0 .5em;
+    line-height: 1.5em;
+    text-shadow: #FFC400 0 0 .5rem;
 
     text-align: center;
 
     margin: 0;
-    padding: 0 1em;
+    padding: 0 1rem;
 }
 
 #wrapper header nav a {
