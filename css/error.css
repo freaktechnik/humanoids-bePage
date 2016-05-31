@@ -17,7 +17,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 @font-face {
   font-family: 'beFont';
-  src: url('../font/beFont.eot?#iefix') format('embedded-opentype'),  url('../font/beFont.woff') format('woff'), url('../font/beFont.ttf')  format('truetype');
+  src: url('../font/beFont.eot?#iefix');
+  src: url('../font/beFont.woff') format('woff'), url('../font/beFont.ttf')  format('truetype');
   font-weight: normal;
   font-style: normal;
 }
