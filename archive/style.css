@@ -49,9 +49,16 @@ h {
     padding: 0 3rem;
 }
 
-.narrow-i {
-	width: .2em;
+.narrow {
 	display: inline-block;
+}
+
+.narrow.i {
+	width: .2em;
+}
+
+.narrow.v {
+	width: .4em;
 }
 
 #wrapper header nav a {
