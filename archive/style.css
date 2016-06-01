@@ -49,20 +49,10 @@ h {
     padding: 0 3rem;
 }
 
-.narrow {
-	display: inline-block;
-}
-
-.narrow.i {
-	width: .2em;
-}
-
-.narrow.v {
-	width: .37em;
-}
-
-.narrow.c {
-	width: .45em;
+h::before {
+	content: "8888888";
+	position: absolute;
+	opacity: 0.05;
 }
 
 #wrapper header nav a {
