@@ -52,7 +52,7 @@ h {
 h::before {
 	content: "8888888";
 	position: absolute;
-	opacity: 0.05;
+	opacity: 0.2;
 }
 
 #wrapper header nav a {
