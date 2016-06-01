@@ -59,7 +59,7 @@ h {
 }
 
 #be {
-	font-family: 'beFont';
+	font-family: 'beFont', monospace;
 	font-size: calc(1.74 * (100vw - 6rem)/8);
 	height: 1em;
 	margin: 2rem auto;
