@@ -40,7 +40,7 @@ h {
     color: #FFC336;
     font-size: 4em;
     line-height: 1.5em;
-    text-shadow: #FFC400 0 0 .5rem;
+    text-shadow: #FFC400 0 0 5px;
 
     text-align: center;
     letter-spacing: .07em;
@@ -58,7 +58,7 @@ h {
 }
 
 .narrow.v {
-	width: .4em;
+	width: .3em;
 }
 
 #wrapper header nav a {
