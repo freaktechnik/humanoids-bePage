@@ -61,6 +61,10 @@ h {
 	width: .37em;
 }
 
+.narrow.c {
+	width: .45em;
+}
+
 #wrapper header nav a {
 	margin-left: 1.5em;
 }
