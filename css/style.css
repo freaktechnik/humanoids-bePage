@@ -182,6 +182,10 @@ main > article {
     flex-direction: column;
 }
 
+main > article.projectcontainer {
+    padding: 1em 0;
+}
+
 /*
  * .default should be equivalent to article:last-child, however that's not as
  * obvious as to what it does.
@@ -209,6 +213,7 @@ main > article:not(:target):not(.default), main > article:target ~ .default {
 article h2 {
     margin-top: 0;
     margin-left: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* Don't space the first and last p further, so columns and the box padding don't make it look bad */
