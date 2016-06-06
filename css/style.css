@@ -184,6 +184,7 @@ main > article {
 
 main > article.projectcontainer {
     padding: 1em 0;
+    min-height: calc(100vh - 2em);
 }
 
 /*
