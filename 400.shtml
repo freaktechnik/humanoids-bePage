@@ -13,7 +13,7 @@
 	<div class="wrapper">
 		<main>
 			<header id="be">
-				<span id="be-bg"><h><span class="blink-b">b</span>eError</h></span>
+				<span id="be-bg"><h1><span class="blink-b">b</span>eError</h1></span>
 			</header>
 			<p class="400">Oops. You made a bad request. So you should change something and then try again. And if it doesn't work, just try harder. Or try <a href="http://duckduckgo.com">DuckDuckGo</a>.</p>
 		</main>

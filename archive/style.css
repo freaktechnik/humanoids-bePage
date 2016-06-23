@@ -35,8 +35,10 @@ body {
 	border-radius: 5px;
 }
 
-h {
+h1 {
     font-family: 'beFont', monospace;
+    font-weight: normal;
+    font-synthesis: style;
     color: #FFC336;
     font-size: 4em;
     line-height: 1.5em;
@@ -49,7 +51,7 @@ h {
     padding: 0 3rem;
 }
 
-h::before {
+h1::before {
 	content: "8888888";
 	position: absolute;
 	opacity: 0.2;

@@ -13,7 +13,7 @@
 	<div class="wrapper">
 		<main>
 			<header id="be">
-				<span id="be-bg"><h><span class="blink-b">b</span>eError</h></span>
+				<span id="be-bg"><h1><span class="blink-b">b</span>eError</h1></span>
 			</header>
 			<p>This is not the page you're looking for. Look for pages with <a href="http://duckduckgo.com">DuckDuckGo</a></p>
 		</main>

@@ -13,7 +13,7 @@
 	<div class="wrapper">
 		<main>
 			<header id="be">
-				<span id="be-bg"><h><span class="blink-b">b</span>eError</h></span>
+				<span id="be-bg"><h1><span class="blink-b">b</span>eError</h1></span>
 			</header>
 			<p>Looks like you wanted to log in but did it wrong. Either you <a href="javascript:window.history.back();">try again</a> or you just search your way out of the error page.</p>
 		</main>

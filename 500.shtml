@@ -13,7 +13,7 @@
 	<div class="wrapper">
 		<main>
 			<header id="be">
-				<span id="be-bg"><h><span class="blink-b">b</span>eError</h></span>
+				<span id="be-bg"><h1><span class="blink-b">b</span>eError</h1></span>
 			</header>
 			<p>Sorry, sometimes even I make faults. And I've got an internal error. Try <a href="javascript:window.location.reload();">reloading</a>.</p>
 		</main>
