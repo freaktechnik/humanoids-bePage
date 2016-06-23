@@ -90,6 +90,9 @@ h1 {
 	transition-property: opacity;
 	transition-duration: .13s;
 	animation: .5s .5s lighton both;
+
+	font-size: inherit;
+	display: inline;
 }
 
 #be-bg::before {
