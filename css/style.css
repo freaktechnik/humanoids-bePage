@@ -242,13 +242,41 @@ main #about {
     margin: 0 0 1rem 0;
 }
 
-.project {
+.project, .talk {
     margin: 0 0 2px 0;
     padding: 0;
 }
 
-.project a, .project a:link {
+.project a, .project a:link, .talk {
     background-color: rgba(255, 255, 255, 0.8);
+}
+
+.talk {
+    padding: .4em 1em;
+    display: flex;
+    justify-content: space-inbetween;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.talk span:last-child {
+    flex-grow: 1;
+}
+
+.talk span:first-child a {
+    font-size: 1.2em;
+}
+
+.talk a {
+    text-decoration: none;
+}
+
+.talk a:hover {
+    text-decoration: underline;
+}
+
+.talk time {
+    float: right;
 }
 
 .project a, .project a:link, .project a:hover, .project a:active, .project a:visited {
@@ -320,7 +348,7 @@ main #about {
         margin: 0;
     }
 
-    .project {
+    .projectcontainer:not(.list) .project {
         margin: 0 0 1em 1em;
         display: inline-block;
         box-shadow: 0 0 2px #2a2a2a;
@@ -328,7 +356,7 @@ main #about {
         overflow: hidden;
     }
 
-    .project figure img {
+    .projectcontainer:not(.list) .project figure img {
         width: 256px;
         height: 144px;
         margin-right: 0;
