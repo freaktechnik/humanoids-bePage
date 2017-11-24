@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   src: url('../font/beFont.woff') format('woff'), url('../font/beFont.ttf')  format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: block;
 }
 
 html, body {
