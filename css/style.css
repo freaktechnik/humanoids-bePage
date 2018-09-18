@@ -15,15 +15,22 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+@viewport {
+    min-width: device-width;
+    zoom: 100%;
+    viewport-fit: cover;
+}
+
 /* Global styling */
 
 html, body, ul, li {
     padding: 0;
     margin: 0;
-	-moz-text-size-adjust: none;
-	-webkit-text-size-adjust: none;
-	-ms-text-size-adjust: none;
-	text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
 }
 
 html, body {
@@ -32,6 +39,7 @@ html, body {
     height: 100%;
 
     scroll-snap-type: mandatory;
+    scroll-snap-type: y proximity;
 }
 
 .flex-container {
@@ -57,8 +65,38 @@ main, .sidebar {
     flex-flow: column;
 }
 
-.sidebar nav, .sidebar footer {
+.sidebar nav,
+.sidebar footer {
     padding: 1em 2em;
+}
+
+.sidebar ul {
+    padding-left: max(2em, env(safe-area-inset-left));
+    padding-right: max(2em, env(safe-area-inset-right));
+}
+.sidebar nav ul {
+    padding-top: max(1em, env(safe-area-inset-top));
+}
+
+.sidebar footer ul {
+    padding-bottom: max(1em, env(safe-area-inset-bottom));
+}
+
+@supports(padding: max(0px)) {
+    .sidebar nav,
+    .sidebar footer {
+        padding-left: max(2em, env(safe-area-inset-left));
+        padding-right: max(2em, env(safe-area-inset-right));
+        padding-top: max(1em, env(safe-area-inset-top));
+        padding-bottom: max(1em, env(safe-area-inset-bottom));
+    }
+    .sidebar ul {
+        padding: 0;
+    }
+    .panel-container > .panel {
+      margin-left: max(2em, env(safe-area-inset-left));
+      margin-right: max(2em, env(safe-area-inset-right));
+    }
 }
 
 .sidebar, .sidebar a:link, .sidebar a:visited {
@@ -89,6 +127,7 @@ main, .sidebar {
 .sidebar nav {
     flex: 1 0 27.2em;
     scroll-snap-coordinate: 0 0;
+    scroll-snap-align: start;
 }
 
 .sidebar nav .menuitem:not(:last-child) {
@@ -166,6 +205,7 @@ main, .sidebar {
 /* Main content  with an image as background and some text */
 main {
     scroll-snap-coordinate: 0 550px;
+    scroll-snap-align: start;
 }
 
 main > article {
@@ -177,6 +217,8 @@ main > article {
     min-height: 100%;
     min-height: 100vh;
     min-height: calc(100vh - 4em);
+
+    height: calc(100% - 4em);
 
     display: flex;
     flex-direction: column;
@@ -203,6 +245,8 @@ main > article:not(:target):not(.default), main > article:target ~ .default {
 .panel-container > .panel {
     padding: 1em;
     margin: 0 2em;
+    margin-top: env(safe-area-inset-top);
+    margin-bottom: env(safe-area-inset-bottom);
 
     background-color: rgba(255, 255, 255, 0.8);
 }
