@@ -12,8 +12,7 @@ jobs:
     name: Lint editorconfig
   - stage: deploy
     name: Deploy
-    script: skip
-    install: skip
+    script: npm run build
     deploy:
       provider: script
       script: ".travis/deploy.sh"
