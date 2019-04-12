@@ -10,7 +10,6 @@ module.exports = {
     siteName: info.title,
     siteDescription: "Personal page of Martin Giger. Mainly links to profiles on other pages.",
     siteUrl: "https://humanoids.be",
-    pathPrefix: '/hbp-v8',
     plugins: [ {
         use: '@gridsome/source-wordpress',
         options: {
