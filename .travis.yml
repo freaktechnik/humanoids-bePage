@@ -1,0 +1,18 @@
+language: node_js
+stages:
+- lint
+- deploy
+jobs:
+  include:
+  - stage: lint
+    name: Lint JS
+    script: npm run lint:js
+  - script: npm run lint:ec
+    name: Lint editorconfig
+  - stage: deploy
+    name: Deploy
+    script: skip
+    install: skip
+    deploy:
+      provider: script
+      script: ".travis/deploy.sh"
