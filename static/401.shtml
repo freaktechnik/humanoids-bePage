@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Error: Please log in</title>
+
+    <link rel="stylesheet" href="/css/error.css" type="text/css">
+</head>
+<body>
+    <div class="wrapper">
+        <main>
+            <header id="be">
+                <span id="be-bg"><h1><span class="blink-b">b</span>eError</h1></span>
+            </header>
+            <p>Looks like you wanted to log in but did it wrong. Either you <a href="javascript:window.history.back();">try again</a> or you just search your way out of the error page.</p>
+        </main>
+        <footer>This error is powered by <img src="/img/aha.png" alt="AHA"></footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+    "plugins": ["gridsome"],
+    "rules": {
+        "node/no-unsupported-features/es-syntax": 0
+    },
+    "extends": [
+        "@freaktechnik/eslint-config-vue",
+        "@freaktechnik/eslint-config-webpack"
+    ]
+}

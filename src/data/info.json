@@ -1,0 +1,46 @@
+{
+    "title": "humanoids bePage",
+    "name": {
+        "given": "Martin",
+        "additional": "Andreas",
+        "family": "Giger"
+    },
+    "dateOfBirth": "1995-03-21",
+    "address": {
+        "city": "Bern",
+        "country": "Switzerland"
+    },
+    "contact": [
+        {
+            "type": "email",
+            "username": "martin@humanoids.be"
+        },
+        {
+            "type": "matrix",
+            "username": "@freaktechnik:humanoids.be"
+        },
+        {
+            "type": "pgp",
+            "username": "AE530058EFE7FD60"
+        }
+    ],
+    "languages": [
+        "JavaScript (node, browser, web etc.)",
+        "TypeScript",
+        "CSS",
+        "HTML",
+        "PHP",
+        "LaTeX",
+        "Java",
+        "C++",
+        "Python",
+        "Rust",
+        "Bash",
+        "Verilog"
+    ],
+    "mastodon": {
+        "id": 115274,
+        "baseUrl": "https://chaos.social/api/v1"
+    },
+    "twitter": "17444333"
+}

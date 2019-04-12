@@ -1,0 +1,66 @@
+[
+    {
+        "title": "Mozilla & Open Source",
+        "slides": "https://slides.com/freaktechnik/mozilla",
+        "event": {
+            "url": "https://sfgz.ch/angebot/weiterbildung/hf-gestaltung-und-kunst/IAD.html",
+            "title": "SFGZ IAD Kurs",
+            "date": "2018-11-09"
+        }
+    },
+    {
+        "title": "Introduction to WebExtensions",
+        "slides": "https://slides.com/freaktechnik/webextensions",
+        "event": {
+            "url": "https://www.meetup.com/Mozilla-Meetup-Switzerland/events/233444437/",
+            "title": "Mozilla Switzerland Meetup",
+            "date": "2016-09-19"
+        }
+    },
+    {
+        "title": "Getting started building Firefox",
+        "slides": "https://slides.com/freaktechnik/build-firefox",
+        "event": {
+            "url": "https://www.meetup.com/Mozilla-Meetup-Switzerland/events/224749550/",
+            "title": "Mozilla Day Switzerland",
+            "date": "2015-10-17"
+        }
+    },
+    {
+        "title": "Promises + Generators = <3",
+        "slides": "https://slides.com/freaktechnik/promises-generators-3",
+        "event": {
+            "url": "https://www.meetup.com/Mozilla-Meetup-Switzerland/events/224750275/",
+            "title": "Mozilla Switzerland Meetup",
+            "date": "2015-09-15"
+        }
+    },
+    {
+        "title": "Introduction to IndexedDB",
+        "slides": "https://www.slideshare.net/freaktechnik/indexed-db-47797273",
+        "event": {
+            "url": "https://www.meetup.com/Mozilla-Meetup-Switzerland/events/221737911/",
+            "title": "Mozilla Switzerland Meetup",
+            "date": "2015-05-05"
+        }
+    },
+    {
+        "title": "Firefox Add-on SDK",
+        "slides": "https://www.slideshare.net/freaktechnik/brief-introduction-to-the-mozilla-addon-sdk",
+        "event": {
+            "url": "https://www.meetup.com/Mozilla-Meetup-Switzerland/events/207317202/",
+            "title": "Mozilla Switzerland Meetup",
+            "date": "2014-10-08"
+        }
+    },
+    {
+        "title": "Nightingale Media Player",
+        "slides": "https://nightingale-media-player.github.io/nightingale-slides/rmll13",
+        "recording": "https://rmll.ubicast.tv/permalink/v124f0be379236fb1e6b/",
+        "event": {
+            "url": "https://schedule2013.rmll.info/programme/technique/developpement-logiciel/article/nightingale-media-player",
+            "title": "RMLL",
+            "date": "2013-07-11"
+        }
+    }
+]

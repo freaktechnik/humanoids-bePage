@@ -1,0 +1,32 @@
+[
+    {
+        "path": "v2/",
+        "title": "Humanoids BePage v2",
+        "name": "Version 2",
+        "version": 2
+    },
+    {
+        "path": "v3_3/",
+        "title": "Humanoids BePage v3.3",
+        "name": "Version 3",
+        "version": 3.3
+    },
+    {
+        "path": "v4/",
+        "title": "Humanoids BePage v4",
+        "name": "Version 4",
+        "version": 4
+    },
+    {
+        "path": "v6/",
+        "title": "Humanoids bePage v6",
+        "name": "Version 6",
+        "version": 6
+    },
+    {
+        "path": "v7/",
+        "title": "Humanoids bePage v7",
+        "name": "Version 7",
+        "version": 7
+    }
+]

@@ -17,3 +17,6 @@ block_comment_end = */
 [{package.json,.travis.yml,package-lock.json,codecov.yml,.all-contributorsrc}]
 indent_style = space
 indent_size = 2
+
+[LICENSE]
+indent_size = any

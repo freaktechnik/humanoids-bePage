@@ -1,0 +1,132 @@
+[
+    {
+        "title": "Live Stream Notifier",
+        "url": "https://streamnotifier.ch",
+        "source": "https://github.com/freaktechnik/justintv-stream-notifications",
+        "type": "creating",
+        "tag": "browser-extension"
+    },
+    {
+        "title": "Notification Sound",
+        "url": "https://addons.mozilla.org/addon/notification-sound?src=external-portfolio",
+        "source": "https://github.com/freaktechnik/notification-sounds",
+        "type": "creating",
+        "tag": "browser-extension"
+    },
+    {
+        "title": "Advanced GitHub Notifier",
+        "url": "https://addons.mozilla.org/addon/advanced-github-notifier/?src=external-portfolio",
+        "source": "https://github.com/freaktechnik/advanced-github-notifier",
+        "type": "creating",
+        "tag": "browser-extension"
+    },
+    {
+        "title": "Twitch Bot Directory",
+        "url": "https://twitchbots.info",
+        "source": "https://github.com/freaktechnik/twitchbots",
+        "type": "creating",
+        "tag": "website"
+    },
+    {
+        "title": "Blockflötenchor Bern",
+        "url": "https://blockfloetenchor.ch",
+        "source": "https://github.com/freaktechnik/band-concerts-theme-bcb",
+        "type": "creating",
+        "tag": "website"
+    },
+    {
+        "title": "Musikgesellschaft Mühlethurnen",
+        "url": "https://mgmuehlethurnen.ch",
+        "source": "https://github.com/freaktechnik/band-concerts-theme",
+        "type": "creating",
+        "tag": "website"
+    },
+    {
+        "title": "Emotes Showcase",
+        "url": "https://www.twitch.tv/ext/3yumzvi6r4wfycsk7vt1kbtto9s0n3",
+        "source": "https://github.com/freaktechnik/twitch-emotes-extension",
+        "type": "creating",
+        "tag": "twitch-extension"
+    },
+    {
+        "title": "ATAM - Auto-Translating Answer Machine",
+        "url": "https://www.twitch.tv/ext/6mdosjj1hyrx4yontoxeqfzbks040s",
+        "type": "contributing",
+        "tag": "twitch-extension"
+    },
+    {
+        "title": "GitHub Projects Content Queue",
+        "source": "https://github.com/mozillach/gh-projects-content-queue",
+        "type": "contributing",
+        "tag": "service"
+    },
+    {
+        "title": "eslint-plugin-array-func",
+        "url": "https://www.npmjs.com/package/eslint-plugin-array-func",
+        "source": "https://github.com/freaktechnik/eslint-plugin-array-func",
+        "type": "creating",
+        "tag": "library"
+    },
+    {
+        "title": "Transifex Loader",
+        "url": "https://www.npmjs.com/package/transifex-loader",
+        "source": "https://github.com/freaktechnik/transifex-loader",
+        "type": "creating",
+        "tag": "library"
+    },
+    {
+        "title": "Twitch Chatlog",
+        "url": "https://www.npmjs.com/package/twitch-chatlog",
+        "source": "https://github.com/freaktechnik/twitch-chatlog",
+        "type": "creating",
+        "tag": "cli"
+    },
+    {
+        "title": "get-firefox",
+        "url": "https://www.npmjs.com/package/get-firefox",
+        "source": "https://github.com/freaktechnik/get-firefox",
+        "type": "creating",
+        "tag": "cli"
+    },
+    {
+        "title": "Coupon Booklet",
+        "url": "https://addons.mozilla.org/addon/coupon-booklet/?source=external-portfolio",
+        "source": "https://github.com/freaktechnik/coupon-booklet",
+        "type": "creating",
+        "tag": "browser-extension"
+    },
+    {
+        "title": "Close Container",
+        "url": "https://addons.mozilla.org/firefox/addon/close-container/?src=external-portfolio",
+        "source": "https://github.com/freaktechnik/close-container",
+        "type": "creating",
+        "tag": "browser-extension"
+    },
+    {
+        "title": "Netatmo CO₂ Indicator",
+        "url": "https://addons.mozilla.org/en-US/firefox/addon/netatmo-co-indicator/?src=external-portfolio",
+        "source": "https://github.com/freaktechnik/netatmo-indicator",
+        "type": "creating",
+        "tag": "browser-extension"
+    },
+    {
+        "title": "twitch-events-ical",
+        "url": "https://twitch-events-ical.herokuapp.com/",
+        "source": "https://github.com/freaktechnik/twitch-events-ical",
+        "type": "creating",
+        "tag": "service"
+    },
+    {
+        "title": "radio-hoster",
+        "url": "https://twitch.tv/hostedradio",
+        "source": "https://github.com/freaktechnik/radio-hoster",
+        "type": "creating",
+        "tag": "service"
+    },
+    {
+        "title": "IRC issues bot",
+        "source": "https://github.com/freaktechnik/irc-issues-bot",
+        "type": "creating",
+        "tag": "service"
+    }
+]

@@ -1,0 +1,241 @@
+/*
+humanoids bePage
+Copyright (C) 2016 Martin Giger
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+@font-face {
+    font-family: 'beFont';
+    src: url('../font/beFont.eot?#iefix');
+    src: url('../font/beFont.woff') format('woff'), url('../font/beFont.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    color: #ccc;
+    background-color: #2A2A2A;
+    font-family: sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: column;
+    min-height: 100%;
+    min-height: 100vh;
+}
+
+a  {
+    color: #ccc;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 591px;
+    padding: 0 2em;
+    flex: 1 0;
+}
+
+
+h1 {
+    margin-top: 2rem;
+    font-weight: normal;
+}
+
+#be {
+    font-family: 'beFont', monospace;
+    font-synthesis: style;
+    font-weight: normal;
+    font-size: calc(1.74 * (100vw - 6rem)/8);
+    height: 1em;
+    margin: 2rem auto;
+
+    background-color: #222;
+    border: 1px solid #111;
+    border-radius: 5px;
+    padding: 1rem;
+    position: relative;
+    color: #FFC336;
+    text-shadow: 0 0 5px #FFC400;
+    letter-spacing: .07em;
+    text-align: center;
+    line-height: 1em;
+}
+
+#be h1 {
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: .13s;
+    -o-transition-property: opacity;
+    -o-transition-duration: .13s;
+    -ms-transition-property: opacity;
+    -ms-transition-duration: .13s;
+    transition-property: opacity;
+    transition-duration: .13s;
+    animation: .5s .5s lighton both;
+
+    font-size: inherit;
+    display: inline;
+}
+
+#be-bg::before {
+    content: "8888888";
+    position: absolute;
+    opacity: 0.05;
+}
+
+#be-bg {
+    font-size: 1.3em;
+}
+
+.blink-b::before {
+    content: "i";
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: .13s;
+    -o-transition-property: opacity;
+    -o-transition-duration: .13s;
+    -ms-transition-property: opacity;
+    -ms-transition-duration: .13s;
+    transition-property: opacity;
+    transition-duration: .13s;
+    animation: 4200ms .4s blink;
+    position: absolute;
+}
+
+.sr-only {
+    height: 0;
+    width: 0;
+    position: absolute;
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+    color: transparent;
+}
+
+footer {
+    padding: 1em 2em;
+
+    background-color: #222;
+    border-top: 1px solid #111;
+
+    line-height: 1.2;
+    font-size: .8em;
+    text-align: right;
+}
+
+@keyframes lighton {
+    form {
+        opacity: 0 !important;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    13.5% {
+        opacity: 0;
+    }
+
+    16% {
+        opacity: 0.8;
+    }
+
+    18% {
+        opacity: 0.1;
+    }
+
+    23% {
+        opacity: 1;
+    }
+
+    26% {
+        opacity: 0;
+    }
+
+    35% {
+        opacity: 1;
+    }
+
+    41% {
+        opacity: 0;
+    }
+
+    44% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    61% {
+        opacity: 1;
+    }
+
+    69% {
+        opacity: 0;
+    }
+
+    74% {
+        opacity: 0.55;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    76% {
+        opacity: 0;
+    }
+
+    88% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0;
+    }
+
+    94% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (min-width: 650px) {
+    #be {
+        font-size: 115px;
+    }
+}
