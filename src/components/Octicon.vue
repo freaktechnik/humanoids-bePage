@@ -1,12 +1,21 @@
 <template>
-    <svg :width="width" :height="height" :viewBox="viewBox" :class="octiconClasses" version="1.1" aria-hidden="true" role="presentation" v-html="octicon.path"/>
+    <svg
+        :width="width"
+        :height="height"
+        :viewBox="viewBox"
+        :class="octiconClasses"
+        version="1.1"
+        aria-hidden="true"
+        role="presentation"
+        v-html="octicon.path"
+    />
 </template>
 
 <script>
 import Octicons from 'octicons';
 
 export default {
-    name: "octicon",
+    name: "Octicon",
     props: {
         icon: {
             type: String,

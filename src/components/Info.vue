@@ -18,7 +18,7 @@ import Octicon from './Octicon.vue';
 import TimeStamp from './TimeStamp.vue';
 
 export default {
-    name: 'info',
+    name: 'Info',
     components: {
         Octicon,
         TimeStamp

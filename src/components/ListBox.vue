@@ -1,7 +1,9 @@
 <template>
     <section>
         <header>
+            <!-- eslint-disable vue/singleline-html-element-content-newline -->
             <h1 v-if="!titleUrl">{{ title }}</h1>
+            <!-- eslint-enable vue/singleline-html-element-content-newline -->
             <h1 v-else>
                 <a
                     :href="titleUrl"
@@ -95,7 +97,10 @@
                             :title="item.node.content"
                             :lang="item.node.language"
                         />
-                        <figure v-for="attachment in item.node.attachments" :key="attachment.preview">
+                        <figure
+                            v-for="attachment in item.node.attachments"
+                            :key="attachment.preview"
+                        >
                             <lazy-image
                                 v-if="attachment.type === 'image'"
                                 :src="attachment.preview"
@@ -148,7 +153,7 @@ const TYPE_ICONS = {
     };
 
 export default {
-    name: 'list-box',
+    name: 'ListBox',
     components: {
         Octicon,
         TimeStamp,
@@ -184,7 +189,9 @@ export default {
         },
         srcsetForPost(item) {
             const { sizes } = item.node.featuredMedia.mediaDetails;
-            return Object.values(sizes).filter((i) => i).map((image) => `${image.sourceUrl} ${image.width}w`).join(', ');
+            return Object.values(sizes).filter((i) => i)
+                .map((image) => `${image.sourceUrl} ${image.width}w`)
+                .join(', ');
         }
     }
 };

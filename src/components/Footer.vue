@@ -26,7 +26,7 @@
 
 <script>
 export default {
-    name: 'main-footer',
+    name: 'MainFooter',
     props: {
         noWatermark: {
             type: Boolean,

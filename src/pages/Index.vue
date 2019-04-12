@@ -24,8 +24,14 @@
                     <info class="big-only" />
                 </section>
             </div>
-            <info class="small-only grow" v-if="page === 'info'" />
-            <section class="shadow" v-if="page === 'info'">
+            <info
+                class="small-only grow"
+                v-if="page === 'info'"
+            />
+            <section
+                class="shadow"
+                v-if="page === 'info'"
+            >
                 <ul>
                     <li
                         v-for="contact in $page.contact.edges"
@@ -39,7 +45,10 @@
                 </ul>
             </section>
         </header>
-        <main class="timelines listbox" v-if="page === 'info'">
+        <main
+            class="timelines listbox"
+            v-if="page === 'info'"
+        >
             <list-box
                 v-for="(info, type) in timelinePages"
                 :key="type"
@@ -50,7 +59,10 @@
                 :data="$page[info.data].edges"
             />
         </main>
-        <main class="listbox" v-else>
+        <main
+            class="listbox"
+            v-else
+        >
             <list-box
                 :type="page"
                 :title="pageInfo.title"
@@ -60,13 +72,28 @@
             />
         </main>
         <transition name="slide">
-            <div v-if="showMenu" role="menu" class="page-menu">
+            <div
+                v-if="showMenu"
+                role="menu"
+                class="page-menu"
+            >
                 <div class="grow">
-                    <button @click="toggleMenu" class="hide-button"><octicon icon="triangle-left" /></button>
+                    <button
+                        @click="toggleMenu"
+                        class="hide-button"
+                    >
+                        <octicon icon="triangle-left" />
+                    </button>
                     <nav>
                         <ul>
-                            <li v-for="(info, name) in pages" :key="name" :class="{ current: name === page }">
-                                <button @click="showPage(name)">{{ info.title }}</button>
+                            <li
+                                v-for="(info, name) in pages"
+                                :key="name"
+                                :class="{ current: name === page }"
+                            >
+                                <button @click="showPage(name)">
+                                    {{ info.title }}
+                                </button>
                             </li>
                         </ul>
                     </nav>

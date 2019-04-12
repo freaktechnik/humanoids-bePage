@@ -6,7 +6,12 @@
             </header>
             <p>This is not the page you're looking for. Look for pages with <a href="https://duckduckgo.com">DuckDuckGo</a></p>
         </main>
-        <footer>This error is powered by <g-image src="../assets/aha_i.png" alt="/|H|\" /></footer>
+        <footer>
+            This error is powered by <g-image
+                src="../assets/aha_i.png"
+                alt="/|H|\"
+            />
+        </footer>
     </div>
 </template>
 

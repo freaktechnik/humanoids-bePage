@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-    name: 'time-stamp',
+    name: 'TimeStamp',
     props: {
         withTime: {
             type: Boolean,

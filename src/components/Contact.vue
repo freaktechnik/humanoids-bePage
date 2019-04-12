@@ -26,7 +26,7 @@ const ICONS = {
     };
 
 export default {
-    name: 'contact',
+    name: 'Contact',
     components: {
         Octicon
     },
