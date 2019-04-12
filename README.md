@@ -1,4 +1,4 @@
-# ![be](favicon.png) humanoids bePage
+# ![be](src/favicon.png) humanoids bePage
 
 This is the source code to my personal website, hosted at [humanoids.be](https://humanoids.be). It is currently in its seventh iteration. I try to keep previous versions available in an [archive](https://humanoids.be/archive) and make sure they aren't too broken.
 
