@@ -18,5 +18,7 @@ block_comment_end = */
 indent_style = space
 indent_size = 2
 
-[LICENSE]
-indent_size = any
+[{**/*.enc,node_modules/**,LICENSE}]
+indent_size = none
+trim_trailing_whitespace = none
+insert_final_newline = none
