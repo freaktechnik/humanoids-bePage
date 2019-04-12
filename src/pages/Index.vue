@@ -79,7 +79,6 @@
 
 <script>
 import ListBox from '../components/ListBox.vue';
-import TimeStamp from '../components/TimeStamp.vue';
 import Contact from '../components/Contact.vue';
 import Octicon from '../components/Octicon.vue';
 import MainFooter from '../components/Footer.vue';
@@ -92,7 +91,6 @@ import avatarImage from '../assets/avatar.jpg';
 export default {
     components: {
         ListBox,
-        TimeStamp,
         Contact,
         Octicon,
         MainFooter,

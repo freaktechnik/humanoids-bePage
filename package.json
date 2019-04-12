@@ -8,7 +8,8 @@
     "explore": "gridsome explore",
     "lint:js": "eslint ./gridsome.*.js ./package.json src/ --ext js,vue,json",
     "lint:ec": "eclint check $(git ls-files)",
-    "lint": "npm run lint:js && npm run lint:ec"
+    "lint": "npm run lint:js && npm run lint:ec",
+    "test": "npm run lint"
   },
   "dependencies": {
     "gridsome": "^0.5.0",

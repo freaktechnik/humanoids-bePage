@@ -23,7 +23,7 @@ export default {
         Octicon,
         TimeStamp
     }
-}
+};
 </script>
 
 <static-query>

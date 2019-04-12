@@ -15,13 +15,11 @@
 export default {
     metaInfo: {
         title: 'Error: Page not found',
-        link: [
-            {
-                rel: 'stylesheet',
-                href: '/css/error.css'
-            }
-        ]
+        link: [ {
+            rel: 'stylesheet',
+            href: '/css/error.css'
+        } ]
     }
-}
+};
 </script>
 

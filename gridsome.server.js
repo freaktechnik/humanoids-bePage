@@ -318,17 +318,19 @@ module.exports = function(api) {
             const tweets = await getTweets(info.twitter),
                 tweetStore = store.addContentType({
                     typeName: 'Tweet'
-                });
+                }),
+                START = 0,
+                END = 1;
             for(const tweet of tweets) {
                 const supportedMedia = ((tweet.extended_entities && tweet.extended_entities.media) || (tweet.entities && tweet.entities.media) || []).filter((a) => a.type === 'photo' || a.type === 'video');
                 let tweetText = tweet.full_text,
                     offset = 0;
                 // This is a very crude way to remove media links and probably breaks url entities for auto linking.
-                for(const media of supportedMedia.sort((a, b) => b.indices[0] - a.indices[0])) {
-                    const start = media.indices[0] - offset,
-                        end = media.indices[1] - offset;
-                    tweetText = tweetText.substring(0, start) + tweetText.substring(end);
-                    offset += media.indices[1] - media.indices[0];
+                for(const media of supportedMedia.sort((a, b) => b.indices[START] - a.indices[START])) {
+                    const start = media.indices[START] - offset,
+                        end = media.indices[END] - offset;
+                    tweetText = tweetText.substring(START, start) + tweetText.substring(end);
+                    offset += media.indices[END] - media.indices[START];
                 }
                 tweetStore.addNode({
                     id: tweet.id_str,
