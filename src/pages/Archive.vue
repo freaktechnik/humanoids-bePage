@@ -10,7 +10,7 @@
                     :key="edge.node.id"
                 >
                     <a
-                        rel="noopener"
+                        rel="noopener external"
                         :href="$page.metaData.siteUrl + edge.node.path"
                         :title="edge.node.title"
                     >{{ edge.node.excerpt }}</a>
