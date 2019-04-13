@@ -6,5 +6,5 @@ then
 fi
 deploy () {
     # TODO clean out assets?
-    rsync -avz -e "ssh -o UserKnownHostsFile=known_hosts" $TRAVIS_BUILD_DIR/dist/ $DEPLOY_USER@$DEPLOY_HOST:~/public_html/hbp/
+    rsync -avz -e "ssh -o UserKnownHostsFile=known_hosts" $TRAVIS_BUILD_DIR/dist/ $DEPLOY_USER@$DEPLOY_HOST:~/public_html/$1/
 }
