@@ -24,6 +24,7 @@
     "@freaktechnik/eslint-config-node": "^6.6.2",
     "@freaktechnik/eslint-config-vue": "^6.6.3",
     "@freaktechnik/eslint-config-webpack": "^6.6.2",
+    "@gridsome/plugin-critical": "^0.1.1",
     "@gridsome/source-wordpress": "^0.2.1",
     "eclint": "^2.8.1",
     "eslint": "^5.16.0",

@@ -10,11 +10,21 @@ module.exports = {
     siteName: info.title,
     siteDescription: "Personal page of Martin Giger. Mainly links to profiles on other pages.",
     siteUrl: "https://humanoids.be",
-    plugins: [ {
-        use: '@gridsome/source-wordpress',
-        options: {
-            baseUrl: 'https://humanoids.be/log',
-            typeName: 'Blog'
+    plugins: [
+        {
+            use: '@gridsome/source-wordpress',
+            options: {
+                baseUrl: 'https://humanoids.be/log',
+                typeName: 'Blog'
+            }
+        },
+        {
+            use: '@gridsome/plugin-critical',
+            options: {
+                paths: [ '/' ],
+                width: 1300,
+                height: 900
+            }
         }
-    } ]
+    ]
 };

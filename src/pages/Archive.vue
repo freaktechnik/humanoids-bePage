@@ -11,6 +11,7 @@
                 >
                     <a
                         rel="noopener external"
+                        target="_blank"
                         :href="$page.metaData.siteUrl + edge.node.path"
                         :title="edge.node.title"
                     >{{ edge.node.excerpt }}</a>
