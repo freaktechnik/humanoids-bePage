@@ -24,19 +24,6 @@
         <loc>https://humanoids.be/archive/</loc>
     </url>
     <url>
-        <loc>https://humanoids.be/archive/v2/</loc>
-        <lastmod>2012-04-17</lastmod>
-    </url>
-    <url>
-        <loc>https://humanoids.be/archive/v3/</loc>
-        <lastmod>2012-04-17</lastmod>
-    </url>
-    <url>
-        <loc>https://humanoids.be/archive/v4/</loc>
-        <lastmod>2012-04-17</lastmod>
-    </url>
-    <url>
-        <loc>https://humanoids.be/archive/v6/</loc>
-        <lastmod>2014-11-04</lastmod>
+        <loc>https://humanoids.be/about/</loc>
     </url>
 </urlset>
