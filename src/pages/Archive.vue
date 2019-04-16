@@ -10,7 +10,7 @@
                     :key="edge.node.id"
                 >
                     <a
-                        rel="noopener external"
+                        rel="noopener external nofollow"
                         target="_blank"
                         :href="$page.metaData.siteUrl + edge.node.path"
                         :title="edge.node.title"
