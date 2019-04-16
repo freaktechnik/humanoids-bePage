@@ -25,6 +25,24 @@ module.exports = {
                 width: 1300,
                 height: 900
             }
+        },
+        {
+            use: '@gridsome/plugin-sitemap',
+            options: {
+                cacheTime: 600000, // default
+                exclude: [],
+                output: '/sitemap_index.xml',
+                config: {
+                    '/about': {
+                        changefreq: 'yearly',
+                        priority: 0.7
+                    },
+                    '/archive': {
+                        changefreq: 'yearly',
+                        priority: 0.3
+                    }
+                }
+            }
         }
     ]
 };

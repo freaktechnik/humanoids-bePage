@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     $sitemap = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></sitemapindex>');
     $s = $sitemap->addChild('sitemap');
+    $s->addChild('loc', 'https://humanoids.be/sitemap_index.xml');
     $s->addChild('loc', 'https://humanoids.be/page_sitemap.xml');
 
     $blogsitemap = simplexml_load_file('https://humanoids.be/log/sitemap_index.xml');
