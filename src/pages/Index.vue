@@ -226,36 +226,40 @@ export default {
                     content: this.fullName
                 },
                 {
-                    name: 'og:title',
+                    property: 'og:title',
                     content: this.fullName
                 },
                 {
-                    name: 'og:type',
+                    property: 'og:type',
                     content: 'profile'
                 },
                 {
-                    name: 'og:url',
+                    property: 'og:url',
                     content: this.$page.metaData.siteUrl
                 },
                 {
-                    name: 'og:locale',
+                    property: 'og:locale',
                     content: 'en_US'
                 },
                 {
-                    name: 'og:image',
+                    property: 'og:image',
                     content: avatarImage
                 },
                 {
-                    name: 'og:image:width',
+                    property: 'og:image:width',
                     content: 512
                 },
                 {
-                    name: 'og:image:height',
+                    property: 'og:image:height',
                     content: 512
                 },
                 {
                     name: 'twitter:creator',
                     content: '@freaktechnik'
+                },
+                {
+                    name: 'twitter:image',
+                    content: avatarImage
                 },
                 {
                     name: 'profile:first_name',
@@ -274,10 +278,16 @@ export default {
                     content: 'male'
                 }
             ],
-            link: [ {
-                rel: 'shortlink',
-                href: 'https://hbsl.ch'
-            } ],
+            link: [
+                {
+                    rel: 'shortlink',
+                    href: 'https://hbsl.ch'
+                },
+                {
+                    rel: 'canonical',
+                    href: this.$page.metaData.siteUrl
+                }
+            ],
             script: [ {
                 innerHTML: JSON.stringify(JSON_LD), // eslint-disable-line xss/no-mixed-html
                 type: 'application/ld+json'

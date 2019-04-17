@@ -13,9 +13,27 @@ import GlobalFooter from '../components/Footer.vue';
 export default {
     components: {
         GlobalFooter
+    },
+    metaInfo() {
+        return {
+            link: [
+                {
+                    rel: 'canonical',
+                    href: this.$static.metaData.siteUrl + this.$route.path
+                }
+            ]
+        }
     }
 };
 </script>
+
+<static-query>
+query Layout {
+    metaData {
+        siteUrl
+    }
+}
+</static-query>
 
 <style scoped>
 @import url("../assets/styles.css");
