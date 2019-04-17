@@ -16,13 +16,11 @@ export default {
     },
     metaInfo() {
         return {
-            link: [
-                {
-                    rel: 'canonical',
-                    href: this.$static.metaData.siteUrl + this.$route.path
-                }
-            ]
-        }
+            link: [ {
+                rel: 'canonical',
+                href: this.$static.metaData.siteUrl + this.$route.path
+            } ]
+        };
     }
 };
 </script>
