@@ -15,7 +15,7 @@ export default {
         GlobalFooter
     },
     metaInfo() {
-        const META_NAME = `${this.$page.metaData.name.given} ${this.$page.metaData.name.family}`;
+        const META_NAME = `${this.$static.metaData.name.given} ${this.$static.metaData.name.family}`;
         return {
             meta: [ {
                 name: 'author',
