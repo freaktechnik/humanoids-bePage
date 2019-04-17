@@ -28,15 +28,8 @@ export default {
     components: {
         Layout
     },
-    metaInfo() {
-        const META_NAME = `${this.$page.metaData.name.given} ${this.$page.metaData.name.family}`;
-        return {
-            title: 'Archive',
-            meta: [ {
-                name: 'author',
-                content: META_NAME
-            } ]
-        };
+    metaInfo: {
+        title: 'Archive'
     }
 };
 </script>
@@ -44,10 +37,6 @@ export default {
 <page-query>
 query Archive {
     metaData {
-        name {
-            given
-            family
-        },
         siteUrl
     }
 

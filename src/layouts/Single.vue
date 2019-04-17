@@ -15,7 +15,12 @@ export default {
         GlobalFooter
     },
     metaInfo() {
+        const META_NAME = `${this.$page.metaData.name.given} ${this.$page.metaData.name.family}`;
         return {
+            meta: [ {
+                name: 'author',
+                content: META_NAME
+            } ],
             link: [ {
                 rel: 'canonical',
                 href: this.$static.metaData.siteUrl + this.$route.path
@@ -29,6 +34,10 @@ export default {
 query Layout {
     metaData {
         siteUrl
+        name {
+            given
+            family
+        }
     }
 }
 </static-query>

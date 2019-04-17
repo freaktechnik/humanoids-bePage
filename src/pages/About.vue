@@ -39,11 +39,7 @@ export default {
     },
     metaInfo() {
         return {
-            title: 'About',
-            meta: [ {
-                name: 'author',
-                content: this.fullName
-            } ]
+            title: 'About'
         };
     }
 };
