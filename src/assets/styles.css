@@ -62,3 +62,11 @@ a:hover {
     background-color: var(--accent);
     color: var(--dark);
 }
+
+@media print {
+    body,
+    html {
+        height: auto;
+        min-height: 100%;
+    }
+}

@@ -23,4 +23,11 @@ export default {
     display: flex;
     flex-direction: column;
 }
+
+@media print {
+    .layout {
+        height: auto;
+        min-height: 100%;
+    }
+}
 </style>

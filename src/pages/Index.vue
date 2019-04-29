@@ -635,7 +635,7 @@ query Index {
 
 /* TODO tall phones landscape */
 
-@media (min-width: 700px) and (min-height: 500px) { /* 2 / column-width */
+@media (min-width: 700px) and (min-height: 500px), print { /* 2 / column-width */
     :root {
         --column-width: 350px;
     }
@@ -694,6 +694,44 @@ query Index {
     .main-header {
         --header-padding: 4rem;
         --header-width: var(--column-width);
+    }
+}
+
+@media print {
+    :root {
+        --column-width: calc(50vw - 2rem);
+    }
+
+    .timelines {
+        flex-wrap: wrap;
+        min-height: 300px;
+        height: auto;
+        overflow: auto;
+    }
+
+    .timelines section {
+        height: auto;
+        max-height: 80vh;
+    }
+
+    .timeline {
+        min-height: 300px;
+        page-break-inside: avoid;
+        page-break-after: auto;
+    }
+
+    .main-header .shadow {
+        border-top: none;
+        border-bottom: none;
+        background: var(--light);
+        color: var(--dark);
+    }
+
+    .main-header {
+        --header-padding: 2vw;
+        --header-width: 30vw;
+        color: var(--dark);
+        background: var(--light);
     }
 }
 </style>
