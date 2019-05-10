@@ -111,7 +111,7 @@ module.exports = function(api) {
                 title: talk.title,
                 slides: talk.slides,
                 recording: talk.recording,
-                event: store.createReference(eventNode)
+                event: eventNode.id
             });
         }
 
