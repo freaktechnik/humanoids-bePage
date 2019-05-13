@@ -7,7 +7,10 @@
                 rel="home"
             >{{ $static.metaData.siteName }}</g-link>
             <g-link to="/about">About</g-link>
-            <g-link to="/archive" rel="archives">Archive</g-link>
+            <g-link
+                to="/archive"
+                rel="archives"
+            >Archive</g-link>
             <!-- eslint-enable vue/multiline-html-element-content-newline, vue/singleline-html-element-content-newline -->
             <a
                 rel="noopener source"

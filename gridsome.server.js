@@ -272,31 +272,31 @@ module.exports = function(api) {
         process.stdout.write("Loading Toots\n");
         let typeInst;
         const postAttachment = (graphql) => {
-            if(!typeInst) {
-                typeInst = new graphql.GraphQLNonNull(new graphql.GraphQLList(new graphql.GraphQLObjectType({
-                    name: 'MicroblogAttachment',
-                    fields: {
-                        type: {
-                            type: graphql.GraphQLString
-                        },
-                        preview: {
-                            type: graphql.GraphQLString
-                        },
-                        alt: {
-                            type: graphql.GraphQLString
-                        },
-                        height: {
-                            type: graphql.GraphQLFloat
-                        },
-                        width: {
-                            type: graphql.GraphQLFloat
+                if(!typeInst) {
+                    typeInst = new graphql.GraphQLNonNull(new graphql.GraphQLList(new graphql.GraphQLObjectType({
+                        name: 'MicroblogAttachment',
+                        fields: {
+                            type: {
+                                type: graphql.GraphQLString
+                            },
+                            preview: {
+                                type: graphql.GraphQLString
+                            },
+                            alt: {
+                                type: graphql.GraphQLString
+                            },
+                            height: {
+                                type: graphql.GraphQLFloat
+                            },
+                            width: {
+                                type: graphql.GraphQLFloat
+                            }
                         }
-                    }
-                })));
-            }
-            return typeInst;
-        };
-        const toots = await getToots(info.mastodon.id, info.mastodon.baseUrl),
+                    })));
+                }
+                return typeInst;
+            },
+            toots = await getToots(info.mastodon.id, info.mastodon.baseUrl),
             tootStore = store.addContentType({
                 typeName: 'Toot'
             });

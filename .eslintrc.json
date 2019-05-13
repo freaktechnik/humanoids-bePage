@@ -6,5 +6,7 @@
         "filenames/match-regex": 0,
         "node/no-unpublished-require": 0
     },
-    "extends": "@freaktechnik/eslint-config-node"
+    "extends": [
+        "@freaktechnik/eslint-config-node"
+    ]
 }

@@ -164,7 +164,10 @@ export default {
             type: String,
             required: true
         },
-        titleUrl: String,
+        titleUrl: {
+            type: String,
+            default: ''
+        },
         data: {
             type: Array,
             required: true
