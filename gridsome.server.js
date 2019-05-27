@@ -6,10 +6,12 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const { default: Mastodon } = require("megalodon");
-const fetch = require("node-fetch");
-const Twitter = require("twitter");
-const twitterText = require("twitter-text"),
+const { default: Mastodon } = require("megalodon"),
+    fetch = require("node-fetch"),
+    Twitter = require("twitter"),
+    twitterText = require("twitter-text"),
+    NEXT = 1,
+    ID_WIDTH = 3,
 
     getToots = (userId, baseUrl) => {
         const mastoAPI = new Mastodon(
@@ -196,7 +198,7 @@ module.exports = function(api) {
                 url: project.url,
                 type: project.type,
                 tag: project.tag,
-                id
+                id: (id + NEXT).toString().padStart(ID_WIDTH, '0')
             });
         }
 
