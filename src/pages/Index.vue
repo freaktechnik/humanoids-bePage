@@ -338,7 +338,7 @@ query Index {
             }
         }
     }
-    talks: allTalk(order: DESC, sortBy: "event.date") {
+    talks: allTalk(order: DESC, sortBy: "date") {
         edges {
             node {
                 title

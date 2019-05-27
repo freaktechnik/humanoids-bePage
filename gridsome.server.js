@@ -111,7 +111,8 @@ module.exports = function(api) {
                 title: talk.title,
                 slides: talk.slides,
                 recording: talk.recording,
-                event: eventNode.id
+                event: eventNode.id,
+                date: talk.event.date
             });
         }
 
