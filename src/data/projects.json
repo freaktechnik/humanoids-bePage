@@ -14,6 +14,12 @@
         "tag": "website"
     },
     {
+        "title": "Hook Head`s irish Pub",
+        "url": "https://hookheads.ch",
+        "type": "creating",
+        "tag": "wegsite"
+    },
+    {
         "title": "Twitch Bot Directory",
         "url": "https://twitchbots.info",
         "source": "https://github.com/freaktechnik/twitchbots",
