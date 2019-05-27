@@ -7,6 +7,40 @@
         "tag": "browser-extension"
     },
     {
+        "title": "Musikgesellschaft Mühlethurnen",
+        "url": "https://mgmuehlethurnen.ch",
+        "source": "https://github.com/freaktechnik/band-concerts-theme",
+        "type": "creating",
+        "tag": "website"
+    },
+    {
+        "title": "Twitch Bot Directory",
+        "url": "https://twitchbots.info",
+        "source": "https://github.com/freaktechnik/twitchbots",
+        "type": "creating",
+        "tag": "website"
+    },
+    {
+        "title": "eslint-plugin-array-func",
+        "url": "https://www.npmjs.com/package/eslint-plugin-array-func",
+        "source": "https://github.com/freaktechnik/eslint-plugin-array-func",
+        "type": "creating",
+        "tag": "library"
+    },
+    {
+        "title": "GitHub Projects Content Queue",
+        "source": "https://github.com/mozillach/gh-projects-content-queue",
+        "type": "contributing",
+        "tag": "service"
+    },
+    {
+        "title": "Emotes Showcase",
+        "url": "https://www.twitch.tv/ext/3yumzvi6r4wfycsk7vt1kbtto9s0n3",
+        "source": "https://github.com/freaktechnik/twitch-emotes-extension",
+        "type": "creating",
+        "tag": "twitch-extension"
+    },
+    {
         "title": "Notification Sound",
         "url": "https://addons.mozilla.org/addon/notification-sound?src=external-portfolio",
         "source": "https://github.com/freaktechnik/notification-sounds",
@@ -21,13 +55,6 @@
         "tag": "browser-extension"
     },
     {
-        "title": "Twitch Bot Directory",
-        "url": "https://twitchbots.info",
-        "source": "https://github.com/freaktechnik/twitchbots",
-        "type": "creating",
-        "tag": "website"
-    },
-    {
         "title": "Blockflötenchor Bern",
         "url": "https://blockfloetenchor.ch",
         "source": "https://github.com/freaktechnik/band-concerts-theme-bcb",
@@ -35,37 +62,10 @@
         "tag": "website"
     },
     {
-        "title": "Musikgesellschaft Mühlethurnen",
-        "url": "https://mgmuehlethurnen.ch",
-        "source": "https://github.com/freaktechnik/band-concerts-theme",
-        "type": "creating",
-        "tag": "website"
-    },
-    {
-        "title": "Emotes Showcase",
-        "url": "https://www.twitch.tv/ext/3yumzvi6r4wfycsk7vt1kbtto9s0n3",
-        "source": "https://github.com/freaktechnik/twitch-emotes-extension",
-        "type": "creating",
-        "tag": "twitch-extension"
-    },
-    {
         "title": "ATAM - Auto-Translating Answer Machine",
         "url": "https://www.twitch.tv/ext/6mdosjj1hyrx4yontoxeqfzbks040s",
         "type": "contributing",
         "tag": "twitch-extension"
-    },
-    {
-        "title": "GitHub Projects Content Queue",
-        "source": "https://github.com/mozillach/gh-projects-content-queue",
-        "type": "contributing",
-        "tag": "service"
-    },
-    {
-        "title": "eslint-plugin-array-func",
-        "url": "https://www.npmjs.com/package/eslint-plugin-array-func",
-        "source": "https://github.com/freaktechnik/eslint-plugin-array-func",
-        "type": "creating",
-        "tag": "library"
     },
     {
         "title": "Transifex Loader",
