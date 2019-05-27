@@ -326,7 +326,7 @@ query Index {
             }
         }
     }
-    projects: allProject(order: ASC) {
+    projects: allProject(order: DESC, sortBy: "id") {
         edges {
             node {
                 title

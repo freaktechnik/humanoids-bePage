@@ -186,13 +186,17 @@ module.exports = function(api) {
             }
         }));
         const projectItems = require("./src/data/projects.json");
-        for(const project of projectItems) {
+        for(const [
+            id,
+            project
+        ] of projectItems.entries()) {
             projects.addNode({
                 title: project.title,
                 source: project.source,
                 url: project.url,
                 type: project.type,
-                tag: project.tag
+                tag: project.tag,
+                id
             });
         }
 
