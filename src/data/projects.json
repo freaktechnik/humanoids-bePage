@@ -103,14 +103,14 @@
     },
     {
         "title": "Close Container",
-        "url": "https://addons.mozilla.org/firefox/addon/close-container/?src=external-portfolio",
+        "url": "https://addons.mozilla.org/addon/close-container/?src=external-portfolio",
         "source": "https://github.com/freaktechnik/close-container",
         "type": "creating",
         "tag": "browser-extension"
     },
     {
         "title": "Netatmo CO₂ Indicator",
-        "url": "https://addons.mozilla.org/en-US/firefox/addon/netatmo-co-indicator/?src=external-portfolio",
+        "url": "https://addons.mozilla.org/addon/netatmo-co-indicator/?src=external-portfolio",
         "source": "https://github.com/freaktechnik/netatmo-indicator",
         "type": "creating",
         "tag": "browser-extension"
