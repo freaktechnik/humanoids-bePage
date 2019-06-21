@@ -123,5 +123,16 @@
         ],
         "start": "2017-11-22",
         "end": "2019-05-31"
+    },
+    {
+        "type": "work",
+        "title": "Software Developer",
+        "extra": [
+            {
+                "title": "Control4 Switzerland",
+                "content": "Bern"
+            }
+        ],
+        "start": "2019-06-01"
     }
 ]
