@@ -43,6 +43,24 @@ module.exports = {
                     }
                 }
             }
+        },
+        {
+            use: 'gridsome-plugin-pwa',
+            options: {
+                title: 'Martin Giger',
+                startUrl: '/',
+                display: 'standalone',
+                statusBarStyle: 'default',
+                manifestPath: 'manifest.json',
+                serviceWorkerPath: 'service-worker.js',
+                cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg,woff,woff2,eot,ttf',
+                shortName: 'M. Giger',
+                themeColor: '#E5B137',
+                backgroundColor: '#000000',
+                icon: './src/favicon.png', // must be provided
+                msTileImage: './src/favicon.png',
+                msTileColor: '#000000'
+            }
         }
     ]
 };
