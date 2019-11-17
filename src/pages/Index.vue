@@ -169,7 +169,7 @@ export default {
     },
     computed: {
         fullName() {
-            return `${this.$page.metaData.name.given} ${this.$page.metaData.name.family}`;
+            return `${this.$page.metadata.name.given} ${this.$page.metadata.name.family}`;
         },
         timelinePages() {
             const copy = Object.assign({}, this.pages);
@@ -199,17 +199,17 @@ export default {
             "@context": "http://schema.org",
             "@type": "WebSite",
             name: this.fullName,
-            alternateName: this.$page.metaData.siteName,
-            url: this.$page.metaData.siteUrl,
+            alternateName: this.$page.metadata.siteName,
+            url: this.$page.metadata.siteUrl,
             isFamilyFriendly: true,
-            image: this.$page.metaData.siteUrl + beImage,
+            image: this.$page.metadata.siteUrl + beImage,
             about: {
                 "@type": "Person",
                 name: this.fullName,
-                additionalName: this.$page.metaData.name.additional,
+                additionalName: this.$page.metadata.name.additional,
                 email: `mailto:${this.$page.contact.edges.find((c) => c.node.title === 'email').node.content}`,
-                image: this.$page.metaData.siteUrl + avatarImage,
-                url: this.$page.metaData.siteUrl,
+                image: this.$page.metadata.siteUrl + avatarImage,
+                url: this.$page.metadata.siteUrl,
                 sameAs: [
                     'https://twitter.com/freaktechnik',
                     'https://facebook.com/IamsureyoudidntguessthisprofileurlIamsureyoudidaha',
@@ -235,7 +235,7 @@ export default {
                 },
                 {
                     property: 'og:url',
-                    content: this.$page.metaData.siteUrl
+                    content: this.$page.metadata.siteUrl
                 },
                 {
                     property: 'og:locale',
@@ -263,11 +263,11 @@ export default {
                 },
                 {
                     name: 'profile:first_name',
-                    content: this.$page.metaData.name.given
+                    content: this.$page.metadata.name.given
                 },
                 {
                     name: 'profile:last_name',
-                    content: this.$page.metaData.name.family
+                    content: this.$page.metadata.name.family
                 },
                 {
                     name: 'profile:username',
@@ -285,7 +285,7 @@ export default {
                 },
                 {
                     rel: 'canonical',
-                    href: this.$page.metaData.siteUrl
+                    href: this.$page.metadata.siteUrl
                 }
             ],
             script: [ {
@@ -296,7 +296,7 @@ export default {
     },
     mounted() {
         this.pages.info.title = this.fullName;
-        this.pages.blog.link = this.$page.metaData.siteUrl + this.pages.blog.link;
+        this.pages.blog.link = this.$page.metadata.siteUrl + this.pages.blog.link;
         this.query = window.matchMedia('(min-width: 700px) and (min-height: 500px)');
         this.query.addListener(this.listener);
     },
@@ -307,142 +307,142 @@ export default {
 </script>
 
 <page-query>
-query Index {
-    metaData {
-        name {
-            given
-            additional
-            family
-        }
-        siteUrl
-        siteName
-    }
-    contact: allContactMethod(order: ASC) {
-        edges {
-            node {
-                title
-                content
-                id
+    query Index {
+        metadata {
+            name {
+                given
+                additional
+                family
             }
+            siteUrl
+            siteName
         }
-    }
-    projects: allProject(order: ASC, sortBy: "id") {
-        edges {
-            node {
-                title
-                source
-                url
-                type
-                tag
-                id
-            }
-        }
-    }
-    talks: allTalk(order: DESC, sortBy: "date") {
-        edges {
-            node {
-                title
-                slides
-                recording
-                event {
-                    url
+        contact: allContactMethod(order: ASC) {
+            edges {
+                node {
                     title
-                    date
+                    content
+                    id
                 }
-                id
             }
         }
-    }
-    blogPosts: allBlogPost(perPage: 10, sortBy: "date") {
-        edges {
-            node {
-                title
-                excerpt
-                date
-                path
-                featuredMedia {
-                    mediaDetails {
-                        sizes {
-                            medium {
-                                sourceUrl
-                                width
-                            }
-                            mediumLarge {
-                                sourceUrl
-                                width
-                            }
-                            large {
-                                sourceUrl
-                                width
-                            }
-                            full {
-                                sourceUrl
-                                width
+        projects: allProject(order: ASC, sortBy: "id") {
+            edges {
+                node {
+                    title
+                    source
+                    url
+                    type
+                    tag
+                    id
+                }
+            }
+        }
+        talks: allTalk(order: DESC, sortBy: "date") {
+            edges {
+                node {
+                    title
+                    slides
+                    recording
+                    event {
+                        url
+                        title
+                        date
+                    }
+                    id
+                }
+            }
+        }
+        blogPosts: allBlogPost(perPage: 10, sortBy: "date") {
+            edges {
+                node {
+                    title
+                    excerpt
+                    date
+                    link
+                    featuredMedia {
+                        mediaDetails {
+                            sizes {
+                                medium {
+                                    sourceUrl
+                                    width
+                                }
+                                mediumLarge {
+                                    sourceUrl
+                                    width
+                                }
+                                large {
+                                    sourceUrl
+                                    width
+                                }
+                                full {
+                                    sourceUrl
+                                    width
+                                }
                             }
                         }
                     }
-                }
-                id
-                language {
-                    title
+                    id
+                    language {
+                        title
+                    }
                 }
             }
         }
-    }
-    timeline: allTimelineEvent(sortBy: "date", order: DESC) {
-        edges {
-            node {
-                title
-                date
-                end
-                type
-                extra {
+        timeline: allTimelineEvent(sortBy: "date", order: DESC) {
+            edges {
+                node {
                     title
+                    date
+                    end
+                    type
+                    extra {
+                        title
+                        content
+                    }
+                    graduated
+                    id
+                }
+            }
+        }
+        toots: allToot(perPage: 20) {
+            edges {
+                node {
+                    excerpt
                     content
+                    id
+                    date
+                    path
+                    attachments {
+                        type
+                        preview
+                        alt
+                        height
+                        width
+                    }
+                    language
                 }
-                graduated
-                id
+            }
+        }
+        tweets: allTweet(perPage: 20, sortBy: "date", order: DESC) {
+            edges {
+                node {
+                    excerpt
+                    id
+                    date
+                    path
+                    attachments {
+                        type
+                        preview
+                        alt
+                        height
+                        width
+                    }
+                    language
+                }
             }
         }
     }
-    toots: allToot(perPage: 20) {
-        edges {
-            node {
-                excerpt
-                content
-                id
-                date
-                path
-                attachments {
-                    type
-                    preview
-                    alt
-                    height
-                    width
-                }
-                language
-            }
-        }
-    }
-    tweets: allTweet(perPage: 20, sortBy: "date", order: DESC) {
-        edges {
-            node {
-                excerpt
-                id
-                date
-                path
-                attachments {
-                    type
-                    preview
-                    alt
-                    height
-                    width
-                }
-                language
-            }
-        }
-    }
-}
 </page-query>
 
 <style>

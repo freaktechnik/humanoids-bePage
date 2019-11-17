@@ -3,11 +3,11 @@
         <!-- eslint-disable vue/singleline-html-element-content-newline -->
         <p class="info-teaser">Web developer, Euphonium player, travels by train</p>
         <!-- eslint-enable vue/singleline-html-element-content-newline -->
-        <p><octicon icon="home" /> Living in {{ $static.metaData.city }}, {{ $static.metaData.country }}</p>
+        <p><octicon icon="home" /> Living in {{ $static.metadata.city }}, {{ $static.metadata.country }}</p>
         <p>
             <octicon icon="gift" /> Birthday: <time-stamp
                 itemprop="birthDate"
-                :datetime="$static.metaData.dateOfBirth"
+                :datetime="$static.metadata.dateOfBirth"
             />
         </p>
     </div>
@@ -27,13 +27,13 @@ export default {
 </script>
 
 <static-query>
-query Info {
-    metaData {
-        city
-        country
-        dateOfBirth
+    query Info {
+        metadata {
+            city
+            country
+            dateOfBirth
+        }
     }
-}
 </static-query>
 
 <style scoped>

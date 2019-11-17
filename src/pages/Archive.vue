@@ -12,7 +12,7 @@
                     <a
                         rel="noopener external nofollow"
                         target="_blank"
-                        :href="$page.metaData.siteUrl + edge.node.path"
+                        :href="$page.metadata.siteUrl + edge.node.path"
                         :title="edge.node.title"
                     >{{ edge.node.excerpt }}</a>
                 </li>
@@ -35,22 +35,21 @@ export default {
 </script>
 
 <page-query>
-query Archive {
-    metaData {
-        siteUrl
-    }
-
-    archive: allArchive(order: ASC, sortBy: "version") {
-        edges {
-            node {
-                id
-                title
-                excerpt
-                path
+    query Archive {
+        metadata {
+            siteUrl
+        }
+        archive: allArchive(order: ASC, sortBy: "version") {
+            edges {
+                node {
+                    id
+                    title
+                    excerpt
+                    path
+                }
             }
         }
     }
-}
 </page-query>
 
 <style scoped>

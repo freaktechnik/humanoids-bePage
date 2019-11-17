@@ -5,7 +5,7 @@
         </header>
         <main>
             <section>
-                <p>{{ $page.metaData.siteName }} is licensed under the GPLv3 © {{ new Date().getFullYear() }} by {{ fullName }}.</p>
+                <p>{{ $page.metadata.siteName }} is licensed under the GPLv3 © {{ new Date().getFullYear() }} by {{ fullName }}.</p>
                 <p>
                     Built using <a
                         rel="noopener"
@@ -34,7 +34,7 @@ export default {
     },
     computed: {
         fullName() {
-            return `${this.$page.metaData.name.given} ${this.$page.metaData.name.family}`;
+            return `${this.$page.metadata.name.given} ${this.$page.metadata.name.family}`;
         }
     },
     metaInfo() {
@@ -46,13 +46,13 @@ export default {
 </script>
 
 <page-query>
-query About {
-    metaData {
-        name {
-            given
-            family
+    query About {
+        metadata {
+            name {
+                given
+                family
+            }
+            siteName
         }
-        siteName
     }
-}
 </page-query>

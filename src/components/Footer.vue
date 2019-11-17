@@ -5,7 +5,7 @@
             <g-link
                 to="/"
                 rel="home"
-            >{{ $static.metaData.siteName }}</g-link>
+            >{{ $static.metadata.siteName }}</g-link>
             <g-link to="/about">About</g-link>
             <g-link
                 to="/archive"
@@ -40,11 +40,11 @@ export default {
 </script>
 
 <static-query>
-query {
-    metaData {
-        siteName
+    query {
+        metadata {
+            siteName
+        }
     }
-}
 </static-query>
 
 <style scoped>

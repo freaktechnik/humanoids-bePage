@@ -69,7 +69,7 @@
                     <template v-else-if="type === 'blog'">
                         <h1>
                             <a
-                                :href="titleUrl + item.node.path"
+                                :href="item.node.link"
                                 :hreflang="item.node.language.length && item.node.language[0].title.replace('_', '-')"
                                 v-html="item.node.title"
                             />

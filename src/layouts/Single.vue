@@ -15,7 +15,7 @@ export default {
         GlobalFooter
     },
     metaInfo() {
-        const META_NAME = `${this.$static.metaData.name.given} ${this.$static.metaData.name.family}`;
+        const META_NAME = `${this.$static.metadata.name.given} ${this.$static.metadata.name.family}`;
         return {
             meta: [ {
                 name: 'author',
@@ -23,7 +23,7 @@ export default {
             } ],
             link: [ {
                 rel: 'canonical',
-                href: this.$static.metaData.siteUrl + this.$route.path
+                href: this.$static.metadata.siteUrl + this.$route.path
             } ]
         };
     }
@@ -31,15 +31,15 @@ export default {
 </script>
 
 <static-query>
-query Layout {
-    metaData {
-        siteUrl
-        name {
-            given
-            family
+    query Layout {
+        metadata {
+            siteUrl
+            name {
+                given
+                family
+            }
         }
     }
-}
 </static-query>
 
 <style scoped>
