@@ -124,7 +124,7 @@ export default {
         Info
     },
     data() {
-        const listener = (e) => this.resetPage(e);
+        const listener = (event) => this.resetPage(event);
         return {
             pages: {
                 info: {
@@ -188,8 +188,8 @@ export default {
             this.page = name;
             this.showMenu = false;
         },
-        resetPage(e) {
-            if(e.matches && this.page !== 'info') {
+        resetPage(event) {
+            if(event.matches && this.page !== 'info') {
                 this.page = 'info';
             }
         }

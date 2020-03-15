@@ -321,7 +321,7 @@ module.exports = function(api) {
                 for(const media of supportedMedia.sort((a, b) => b.indices[START] - a.indices[START])) {
                     const start = media.indices[START] - offset,
                         end = media.indices[END] - offset;
-                    tweetText = tweetText.substring(START, start) + tweetText.substring(end);
+                    tweetText = tweetText.slice(START, start) + tweetText.slice(end);
                     offset += media.indices[END] - media.indices[START];
                 }
                 tweetStore.addNode({
@@ -342,8 +342,8 @@ module.exports = function(api) {
                 });
             }
         }
-        catch(e) {
-            console.error("Error while fetching tweets", e);
+        catch(error) {
+            console.error("Error while fetching tweets", error);
         }
         //TODO turn mastodon and twitter user IDs into the actual usernames for URLs n stuff
     });
