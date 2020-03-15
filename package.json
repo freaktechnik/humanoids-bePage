@@ -12,7 +12,7 @@
     "test": "npm run lint"
   },
   "dependencies": {
-    "gridsome": "^0.7.13",
+    "gridsome": "0.7.12",
     "octicons": "^8.5.0",
     "v-lazy-image": "^1.4.0"
   },
