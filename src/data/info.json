@@ -42,5 +42,6 @@
         "id": 115274,
         "baseUrl": "https://chaos.social/"
     },
-    "twitter": "17444333"
+    "twitter": "17444333",
+    "funkwhale": "https://music.humanoids.be/api/v1/channels/djid3ot/rss"
 }

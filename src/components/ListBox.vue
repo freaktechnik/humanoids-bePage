@@ -22,9 +22,17 @@
                     :key="item.node.id"
                 >
                     <template v-if="type === 'timeline'">
-                        <h1><octicon :icon="iconForType(item.node.type)" /><span>{{ item.node.title }}</span></h1>
+                        <h1>
+                            <octicon
+                                :icon="iconForType(item.node.type)"
+                                :label="item.node.type"
+                            /><span>{{ item.node.title }}</span>
+                        </h1>
                         <p v-if="!!item.node.graduated">
-                            <octicon icon="verified" /> {{ item.node.graduated }}
+                            <octicon
+                                icon="verified"
+                                label="Graduated with"
+                            /> {{ item.node.graduated }}
                         </p>
                         <p
                             v-for="extra of item.node.extra"
@@ -53,7 +61,10 @@
                             <octicon icon="code" />&nbsp;<a :href="item.node.source">Source Code</a>
                         </p>
                         <footer>
-                            <octicon :icon="projectTagIcon(item.node.tag)" /> {{ projectTagLabel(item.node.tag) }} · <octicon :icon="contributionIcon(item.node.type)" />
+                            <octicon :icon="projectTagIcon(item.node.tag)" /> {{ projectTagLabel(item.node.tag) }} · <octicon
+                                :icon="contributionIcon(item.node.type)"
+                                :label="item.node.type"
+                            />
                         </footer>
                     </template>
                     <template v-else-if="type === 'talks'">
@@ -71,6 +82,7 @@
                             <a
                                 :href="item.node.link"
                                 :hreflang="item.node.language.length && item.node.language[0].title.replace('_', '-')"
+                                :lang="item.node.language.length && item.node.language[0].title.replace('_', '-')"
                                 v-html="item.node.title"
                             />
                         </h1>
@@ -87,6 +99,40 @@
                             v-html="item.node.excerpt"
                             :lang="item.node.language.length && item.node.language[0].title.replace('_', '-')"
                         />
+                        <footer>
+                            <time-stamp :datetime="item.node.date" />
+                        </footer>
+                    </template>
+                    <template v-else-if="type === 'tracks'">
+                        <figure
+                            v-for="attachment in item.node.attachments"
+                            :key="attachment.preview"
+                            class="track-album"
+                        >
+                            <a
+                                :href="item.node.path"
+                                :hreflang="item.node.language"
+                            >
+                                <lazy-image
+                                    v-if="attachment.type === 'image'"
+                                    :src="attachment.preview"
+                                    :alt="attachment.alt"
+                                    :height="80"
+                                    :width="80"
+                                />
+                            </a>
+                        </figure>
+                        <h1>
+                            <octicon icon="unmute" />&nbsp;
+                            <a
+                                :href="item.node.path"
+                                :hreflang="item.node.language"
+                                :lang="item.node.language"
+                            >{{ item.node.title }}</a>
+                        </h1>
+                        <article :lang="item.node.language">
+                            {{ item.node.excerpt }}
+                        </article>
                         <footer>
                             <time-stamp :datetime="item.node.date" />
                         </footer>
@@ -110,7 +156,7 @@
                             />
                         </figure>
                         <footer>
-                            <a :href="item.node.path.substr(1)"><time-stamp
+                            <a :href="item.node.path"><time-stamp
                                 :datetime="item.node.date"
                                 :with-time="true"
                             /></a>
@@ -129,11 +175,11 @@ import LazyImage from 'v-lazy-image';
 const TYPE_ICONS = {
         'EDUCATION': 'book',
         'WORK': 'briefcase',
-        'CIVIL_SERVICE': 'paintcan'
+        'CIVIL_SERVICE': 'tools'
     },
     CONTRIBUTE_ICONS = {
         'CREATING': 'person',
-        'CONTRIBUTING': 'organization'
+        'CONTRIBUTING': 'people'
     },
     PROJECT_TAG_ICONS = {
         'WEBSITE': 'globe',
@@ -284,6 +330,7 @@ a:visited {
 
 .list-content li {
     padding: var(--column-gutter) 0;
+    clear: both;
 }
 
 .list-content li h1 {
@@ -309,6 +356,16 @@ a:visited {
 .list-content li img {
     max-width: 100%;
     height: auto;
+}
+
+.list-content .track-album {
+    float: right;
+    margin-left: 1em;
+}
+
+.list-content .track-album img {
+    height: 80px;
+    width: 80px;
 }
 
 footer {

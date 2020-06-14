@@ -11,6 +11,8 @@ const { default: mastodonGenerator } = require("megalodon"),
     Twitter = require("twitter"),
     twitterText = require("twitter-text"),
     graphql = require("gridsome/graphql"),
+    FeedParser = require("feedparser"),
+    getStream = require("get-stream"),
     NEXT = 1,
     ID_WIDTH = 3,
 
@@ -53,6 +55,17 @@ const { default: mastodonGenerator } = require("megalodon"),
             count: 20,
             "tweet_mode": "extended"
         });
+    },
+
+    getFeed = async (url) => {
+        const parser = new FeedParser({
+                feedurl: url
+            }),
+            response = await fetch(url);
+        if(response.ok) {
+            response.body.pipe(parser);
+            return getStream.array(parser);
+        }
     };
 
 module.exports = function(api) {
@@ -346,5 +359,38 @@ module.exports = function(api) {
             console.error("Error while fetching tweets", error);
         }
         //TODO turn mastodon and twitter user IDs into the actual usernames for URLs n stuff
+
+        process.stdout.write("Loading Tracks\n");
+        try {
+            const tracks = await getFeed(info.funkwhale),
+                trackStore = store.addCollection({
+                    typeName: 'Track'
+                });
+            for(const track of tracks) {
+                const attachments = [];
+                if(track.image.url) {
+                    attachments.push({
+                        type: 'image',
+                        preview: track.image.url,
+                        alt: track.title,
+                        width: 500,
+                        height: 500
+                    });
+                }
+                trackStore.addNode({
+                    id: track.guid,
+                    path: track.link,
+                    date: track.date.toISOString(),
+                    title: track.title,
+                    excerpt: track.summary,
+                    content: track.description,
+                    attachments,
+                    language: 'en'
+                });
+            }
+        }
+        catch(error) {
+            console.error("Error while fetching tracks", error);
+        }
     });
 };

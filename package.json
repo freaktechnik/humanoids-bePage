@@ -12,8 +12,8 @@
     "test": "npm run lint"
   },
   "dependencies": {
+    "@primer/octicons": "^10.0.0",
     "gridsome": "^0.7.17",
-    "octicons": "^8.5.0",
     "v-lazy-image": "^1.4.0"
   },
   "engines": {
@@ -30,6 +30,8 @@
     "eclint": "^2.8.1",
     "eslint": "^7.2.0",
     "eslint-plugin-gridsome": "^1.4.12",
+    "feedparser": "^2.2.10",
+    "get-stream": "^5.1.0",
     "gridsome-plugin-pwa": "0.0.18",
     "megalodon": "^3.2.2",
     "node-fetch": "^2.6.0",

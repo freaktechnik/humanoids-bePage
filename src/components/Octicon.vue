@@ -5,14 +5,18 @@
         :viewBox="viewBox"
         :class="octiconClasses"
         version="1.1"
-        aria-hidden="true"
+        :aria-hidden="ariaHidden"
+        :aria-label="label"
         role="presentation"
         v-html="octicon.path"
     />
 </template>
 
 <script>
-import Octicons from 'octicons';
+import Octicons from '@primer/octicons';
+
+const ONE_ICON = 1,
+    FIRST = 0;
 
 export default {
     name: "Octicon",
@@ -23,6 +27,10 @@ export default {
             validator(icon) {
                 return Octicons.hasOwnProperty(icon);
             }
+        },
+        label: {
+            type: String,
+            required: false
         }
     },
     data() {
@@ -33,19 +41,43 @@ export default {
     },
     computed: {
         octicon() {
-            return Octicons[this.icon];
+            return Octicons[this.icon].heights[this.octiconHeight];
+        },
+        octiconHeight() {
+            const iconInfo = Octicons[this.icon];
+            if(iconInfo.heights[this.fontSize]) {
+                return this.fontSize;
+            }
+            const availableHeights = Object.keys(iconInfo.heights);
+            if(availableHeights.length === ONE_ICON) {
+                return availableHeights[FIRST];
+            }
+            let bestSize = Number.MAX_SAFE_INTEGER;
+            for(const height of Object.keys(iconInfo.heights)) {
+                const heightNumber = Number.parseInt(height, 10);
+                if(heightNumber >= this.fontSize && heightNumber < bestSize) {
+                    bestSize = heightNumber;
+                }
+            }
+            if(bestSize >= Number.MAX_SAFE_INTEGER) {
+                return Math.max(...availableHeights.map((height) => Number.parseInt(height, 10)));
+            }
+            return bestSize;
         },
         width() {
-            return (this.octicon.width / this.octicon.height) * this.fontSize;
+            return (this.octicon.width / this.octiconHeight) * this.fontSize;
         },
         height() {
             return this.fontSize;
         },
         viewBox() {
-            return `0 0 ${this.octicon.width} ${this.octicon.height}`;
+            return this.octicon.options.viewBox;
         },
         octiconClasses() {
-            return `octicon octicon-${this.icon}`;
+            return this.octicon.options.class;
+        },
+        ariaHidden() {
+            return (!this.label).toString();
         }
     },
     mounted() {

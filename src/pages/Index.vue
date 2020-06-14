@@ -159,6 +159,11 @@ export default {
                     title: '@freaktechnik@twitter.com',
                     data: 'tweets',
                     link: 'https://twitter.com/freaktechnik'
+                },
+                tracks: {
+                    title: '@djid3ot@music.humanoids.be',
+                    data: 'tracks',
+                    link: 'https://music.humanoids.be/channels/djid3ot'
                 }
             },
             page: 'info',
@@ -442,6 +447,23 @@ export default {
                 }
             }
         }
+        tracks: allTrack(perPage: 20, sortBy: "date", order: DESC) {
+            edges {
+                node {
+                    excerpt
+                    id
+                    title
+                    date
+                    path
+                    attachments {
+                        type
+                        preview
+                        alt
+                    }
+                    language
+                }
+            }
+        }
     }
 </page-query>
 
@@ -551,7 +573,7 @@ export default {
     top: 0;
     bottom: 0;
     left: 0;
-    width: 70vw;
+    width: 75vw;
     box-shadow: 0 0 5px var(--shadow);
     display: flex;
     flex-direction: column;
@@ -637,7 +659,7 @@ export default {
 
 @media (min-width: 700px) and (min-height: 500px), print { /* 2 / column-width */
     :root {
-        --column-width: 350px;
+        --column-width: 360px;
     }
 
     #menu,

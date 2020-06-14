@@ -68,12 +68,6 @@
         "tag": "website"
     },
     {
-        "title": "ATAM - Auto-Translating Answer Machine",
-        "url": "https://www.twitch.tv/ext/6mdosjj1hyrx4yontoxeqfzbks040s",
-        "type": "contributing",
-        "tag": "twitch-extension"
-    },
-    {
         "title": "Transifex Loader",
         "url": "https://www.npmjs.com/package/transifex-loader",
         "source": "https://github.com/freaktechnik/transifex-loader",
@@ -116,22 +110,9 @@
         "tag": "browser-extension"
     },
     {
-        "title": "twitch-events-ical",
-        "url": "https://twitch-events-ical.herokuapp.com/",
-        "source": "https://github.com/freaktechnik/twitch-events-ical",
-        "type": "creating",
-        "tag": "service"
-    },
-    {
         "title": "radio-hoster",
         "url": "https://twitch.tv/hostedradio",
         "source": "https://github.com/freaktechnik/radio-hoster",
-        "type": "creating",
-        "tag": "service"
-    },
-    {
-        "title": "IRC issues bot",
-        "source": "https://github.com/freaktechnik/irc-issues-bot",
         "type": "creating",
         "tag": "service"
     }
