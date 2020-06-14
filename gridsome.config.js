@@ -47,6 +47,7 @@ module.exports = {
         {
             use: 'gridsome-plugin-pwa',
             options: {
+                disableServiceWorker: false,
                 title: 'Martin Giger',
                 startUrl: '/',
                 display: 'standalone',

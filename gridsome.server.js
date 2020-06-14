@@ -6,7 +6,7 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const { default: Mastodon } = require("megalodon"),
+const { default: mastodonGenerator } = require("megalodon"),
     fetch = require("node-fetch"),
     Twitter = require("twitter"),
     twitterText = require("twitter-text"),
@@ -15,11 +15,11 @@ const { default: Mastodon } = require("megalodon"),
     ID_WIDTH = 3,
 
     getToots = (userId, baseUrl) => {
-        const mastoAPI = new Mastodon(
-            undefined, // We don't need a token for what we're doing
+        const mastoAPI = mastodonGenerator(
+            'mastodon',
             baseUrl
         );
-        return mastoAPI.get(`/accounts/${userId}/statuses`);
+        return mastoAPI.getAccountStatuses(userId);
     },
 
     getTwitterBearerToken = async (key, secret) => {

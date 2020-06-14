@@ -12,7 +12,7 @@
     "test": "npm run lint"
   },
   "dependencies": {
-    "gridsome": "0.7.12",
+    "gridsome": "^0.7.17",
     "octicons": "^8.5.0",
     "v-lazy-image": "^1.4.0"
   },
@@ -20,20 +20,20 @@
     "node": ">=10.0.0"
   },
   "devDependencies": {
-    "@freaktechnik/eslint-config-browser": "^7.1.0",
-    "@freaktechnik/eslint-config-node": "^7.1.0",
-    "@freaktechnik/eslint-config-vue": "^7.1.0",
-    "@freaktechnik/eslint-config-webpack": "^7.1.0",
+    "@freaktechnik/eslint-config-browser": "^7.2.0",
+    "@freaktechnik/eslint-config-node": "^7.2.0",
+    "@freaktechnik/eslint-config-vue": "^7.2.0",
+    "@freaktechnik/eslint-config-webpack": "^7.2.0",
     "@gridsome/plugin-critical": "^0.1.6",
-    "@gridsome/plugin-sitemap": "^0.2.3",
+    "@gridsome/plugin-sitemap": "^0.3.0",
     "@gridsome/source-wordpress": "^0.5.3",
     "eclint": "^2.8.1",
-    "eslint": "^6.8.0",
-    "eslint-plugin-gridsome": "^1.4.1",
-    "gridsome-plugin-pwa": "0.0.13",
-    "megalodon": "^2.2.2",
+    "eslint": "^7.2.0",
+    "eslint-plugin-gridsome": "^1.4.12",
+    "gridsome-plugin-pwa": "0.0.18",
+    "megalodon": "^3.2.2",
     "node-fetch": "^2.6.0",
     "twitter": "^1.7.1",
-    "twitter-text": "^3.0.1"
+    "twitter-text": "^3.1.0"
   }
 }
