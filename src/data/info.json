@@ -40,7 +40,7 @@
     ],
     "mastodon": {
         "id": 115274,
-        "baseUrl": "https://chaos.social/api/v1"
+        "baseUrl": "https://chaos.social/"
     },
     "twitter": "17444333"
 }
