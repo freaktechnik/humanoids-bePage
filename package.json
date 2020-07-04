@@ -29,7 +29,7 @@
     "@gridsome/source-wordpress": "^0.5.3",
     "eclint": "^2.8.1",
     "eslint": "^7.2.0",
-    "eslint-plugin-gridsome": "^1.4.12",
+    "eslint-plugin-gridsome": "^1.4.13",
     "feedparser": "^2.2.10",
     "get-stream": "^5.1.0",
     "gridsome-plugin-pwa": "0.0.18",
