@@ -479,6 +479,7 @@ export default {
 .main-header {
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     --header-padding: 0.5rem;
     --header-width: 4rem;
     background-color: var(--dark);
