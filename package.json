@@ -31,7 +31,7 @@
     "eslint": "^7.7.0",
     "eslint-plugin-gridsome": "^1.5.0",
     "feedparser": "^2.2.10",
-    "get-stream": "^5.2.0",
+    "get-stream": "^6.0.0",
     "gridsome-plugin-pwa": "0.0.18",
     "megalodon": "^3.2.4",
     "node-fetch": "^2.6.0",
