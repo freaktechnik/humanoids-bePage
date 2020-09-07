@@ -34,7 +34,7 @@
     "get-stream": "^6.0.0",
     "gridsome-plugin-pwa": "0.0.18",
     "megalodon": "^3.3.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "twitter": "^1.7.1",
     "twitter-text": "^3.1.0"
   }
