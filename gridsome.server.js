@@ -339,7 +339,7 @@ module.exports = function(api) {
                 }
                 tweetStore.addNode({
                     id: tweet.id_str,
-                    path: `https://twitter.com/status/${tweet.user.screen_name}/${tweet.id_str}`,
+                    path: `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`,
                     excerpt: twitterText.autoLink(tweetText, {
                         urlEntities: tweet.entities.url
                     }),
