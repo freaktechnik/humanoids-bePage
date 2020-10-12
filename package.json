@@ -28,7 +28,7 @@
     "@gridsome/plugin-sitemap": "^0.4.0",
     "@gridsome/source-wordpress": "^0.5.3",
     "eclint": "^2.8.1",
-    "eslint": "^7.10.0",
+    "eslint": "^7.11.0",
     "eslint-plugin-gridsome": "^1.5.0",
     "feedparser": "^2.2.10",
     "get-stream": "^6.0.0",
