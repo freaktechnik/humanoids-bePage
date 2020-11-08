@@ -90,7 +90,7 @@
             },
             {
                 "title": "Creating and adjusting sites based on proprietary CMS with e-commerce",
-                "content": "PHP, JavaScrip, JQuery, CSS, Bootstrap 3"
+                "content": "PHP, JavaScript, JQuery, CSS, Bootstrap 3"
             }
         ],
         "start": "2016-10-31",
@@ -133,6 +133,7 @@
                 "content": "Bern"
             }
         ],
-        "start": "2019-06-01"
+        "start": "2019-06-01",
+        "end": "2020-12-31"
     }
 ]
