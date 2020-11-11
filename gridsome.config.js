@@ -61,6 +61,15 @@ module.exports = {
                 msTileImage: './src/favicon.png',
                 msTileColor: '#000000'
             }
+        },
+        {
+            use: '@noxify/gridsome-plugin-remote-image',
+            options: {
+                typeName: 'MicroblogAttachment',
+                sourceField: 'previewSrc',
+                targetField: 'preview',
+                targetPath: './src/assets/microblogPreviews'
+            }
         }
     ],
     chainWebpack(config) {

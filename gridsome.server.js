@@ -84,26 +84,6 @@ module.exports = function(api) {
     api.loadSource(async (store) => {
         store.addSchema(new graphql.GraphQLSchema({
             types: [
-                new graphql.GraphQLNonNull(new graphql.GraphQLList(new graphql.GraphQLObjectType({
-                    name: 'MicroblogAttachment',
-                    fields: {
-                        type: {
-                            type: graphql.GraphQLString
-                        },
-                        preview: {
-                            type: graphql.GraphQLString
-                        },
-                        alt: {
-                            type: graphql.GraphQLString
-                        },
-                        height: {
-                            type: graphql.GraphQLFloat
-                        },
-                        width: {
-                            type: graphql.GraphQLFloat
-                        }
-                    }
-                }))),
                 new graphql.GraphQLNonNull(new graphql.GraphQLEnumType({
                     name: 'TimelineType',
                     values: {
@@ -193,16 +173,27 @@ module.exports = function(api) {
             Toot: {
                 attachments: {
                     type: '[MicroblogAttachment]',
-                    resolve(node) {
-                        return node.attachments;
+                    resolve(node, args, context) {
+                        const collection = context.store.getCollection('MicroblogAttachment');
+                        return node.attachments.map((attachment) => collection.getNodeById(attachment.id));
                     }
                 }
             },
             Tweet: {
                 attachments: {
                     type: '[MicroblogAttachment]',
-                    resolve(node) {
-                        return node.attachments;
+                    resolve(node, args, context) {
+                        const collection = context.store.getCollection('MicroblogAttachment');
+                        return node.attachments.map((attachment) => collection.getNodeById(attachment.id));
+                    }
+                }
+            },
+            Track: {
+                attachments: {
+                    type: '[MicroblogAttachment]',
+                    resolve(node, args, context) {
+                        const collection = context.store.getCollection('MicroblogAttachment');
+                        return node.attachments.map((attachment) => collection.getNodeById(attachment.id));
                     }
                 }
             }
@@ -357,6 +348,9 @@ module.exports = function(api) {
             toots = await getToots(mastodonInfo.id, baseUrl),
             tootStore = store.addCollection({
                 typeName: 'Toot'
+            }),
+            attachmentStore = store.addCollection({
+                typeName: 'MicroblogAttachment'
             });
         for(const toot of toots.data) {
             if(toot.visibility === 'public' && !toot.reblog) {
@@ -366,13 +360,16 @@ module.exports = function(api) {
                     excerpt: toot.content,
                     date: toot.created_at,
                     content: toot.spoiler_text,
-                    attachments: toot.media_attachments.map((a) => ({
-                        type: a.type,
-                        preview: a.preview_url,
-                        alt: a.description || '',
-                        height: a.meta && a.meta.small && a.meta.small.height,
-                        width: a.meta && a.meta.small && a.meta.small.width
-                    })),
+                    attachments: toot.media_attachments.map((a) => {
+                        const attachment = attachmentStore.addNode({
+                            type: a.type,
+                            previewSrc: a.preview_url,
+                            alt: a.description || '',
+                            height: a.meta && a.meta.small && a.meta.small.height,
+                            width: a.meta && a.meta.small && a.meta.small.width
+                        });
+                        return store.createReference('MicroblogAttachment', attachment.id);
+                    }),
                     language: toot.language
                 });
             }
@@ -405,13 +402,16 @@ module.exports = function(api) {
                         urlEntities: tweet.entities.url
                     }),
                     date: new Date(tweet.created_at).toISOString(),
-                    attachments: supportedMedia.map((a) => ({
-                        type: 'image',
-                        preview: a.media_url_https,
-                        alt: a.display_url,
-                        width: a.sizes.small.w,
-                        height: a.sizes.small.h
-                    })),
+                    attachments: supportedMedia.map((a) => {
+                        const attachment = attachmentStore.addNode({
+                            type: 'image',
+                            previewSrc: a.media_url_https,
+                            alt: a.display_url,
+                            width: a.sizes.small.w,
+                            height: a.sizes.small.h
+                        });
+                        return store.createReference('MicroblogAttachment', attachment.id);
+                    }),
                     language: tweet.lang
                 });
             }
@@ -431,13 +431,14 @@ module.exports = function(api) {
             for(const track of tracks) {
                 const attachments = [];
                 if(track.image.url) {
-                    attachments.push({
+                    const attachment = attachmentStore.addNode({
                         type: 'image',
-                        preview: track.image.url,
+                        previewSrc: track.image.url,
                         alt: track.title,
                         width: 500,
                         height: 500
                     });
+                    attachments.push(store.createReference('MicroblogAttachment', attachment.id));
                 }
                 trackStore.addNode({
                     id: track.guid,

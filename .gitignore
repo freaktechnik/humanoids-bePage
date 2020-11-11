@@ -9,3 +9,4 @@ dist
 .env.*
 .travis/deploy_rsa
 .travis/deploy_rsa.pub
+src/assets/microblogPreviews

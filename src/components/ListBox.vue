@@ -100,19 +100,17 @@
                     <template v-else-if="type === 'tracks'">
                         <figure
                             v-for="attachment in item.node.attachments"
-                            :key="attachment.preview"
+                            :key="attachment.preview.src"
                             class="track-album"
                         >
                             <a
                                 :href="item.node.path"
                                 :hreflang="item.node.language"
                             >
-                                <lazy-image
+                                <g-image
                                     v-if="attachment.type === 'image'"
                                     :src="attachment.preview"
                                     :alt="attachment.alt"
-                                    :height="80"
-                                    :width="80"
                                 />
                             </a>
                         </figure>
@@ -139,14 +137,12 @@
                         />
                         <figure
                             v-for="attachment in item.node.attachments"
-                            :key="attachment.preview"
+                            :key="attachment.preview.src"
                         >
-                            <lazy-image
+                            <g-image
                                 v-if="attachment.type === 'image'"
                                 :src="attachment.preview"
                                 :alt="attachment.alt"
-                                :height="attachment.height"
-                                :width="attachment.width"
                             />
                         </figure>
                         <footer>
