@@ -296,7 +296,7 @@ export default {
                 {
                     rel: 'alternate',
                     type: 'application/json',
-                    href: `${this.$page.metadata.siteUrl}/${resumeLocation}`
+                    href: `${this.$page.metadata.siteUrl}${resumeLocation}`
                 }
             ],
             script: [ {
