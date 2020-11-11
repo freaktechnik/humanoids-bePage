@@ -6,6 +6,8 @@ This is the source code to my personal website, hosted at [humanoids.be](https:/
 
 This repository includes quite a few sub-sites. [Index.vue](src/pages/Index.vue) is the main site. [Archive.vue](src/pages/Archive.vue) the archive index page, then there are the error pages constrained to [static/](static). The sitemap files are linked to by a .htaccess.
 
+Almost all content is pulled from resume.json, a [JSON Resume](https://jsonresume.org/) file.
+
 ## License
 
 The source code within this repository is licensed under the [GPLv3](LICENSE).
