@@ -1,0 +1,764 @@
+{
+    "$schema": "https://github.com/jsonresume/resume-schema/raw/v1.0.0/schema.json",
+    "basics": {
+        "name": "Martin Giger",
+        "label": "Software Development Engineer",
+        "picture": "https://humanoids.be/resume.jpg",
+        "email": "martin@humanoids.be",
+        "phone": "",
+        "website": "https://humanoids.be",
+        "summary": "Web developer, Euphonium player, travels by train",
+        "location": {
+            "postalCode": "3008",
+            "city": "Bern",
+            "countryCode": "CH",
+            "region": "Bern"
+        },
+        "profiles": [
+            {
+                "network": "GitHub",
+                "username": "freaktechnik",
+                "url": "https://github.com/freaktechnik"
+            },
+            {
+                "network": "Twitter",
+                "username": "@freaktechnik",
+                "url": "https://twitter.com/freaktechnik",
+                "id": "17444333"
+            },
+            {
+                "network": "Mastodon",
+                "username": "@freaktechnik@chaos.social",
+                "url": "https://chaos.social/@freaktechnik",
+                "id": "115274"
+            },
+            {
+                "network": "Matrix",
+                "username": "@freaktechnik:humanoids.be",
+                "url": "https://matrix.to/#/@freaktechnik:humanoids.be"
+            },
+            {
+                "network": "Funkwhale",
+                "username": "@djid3ot@music.humanoids.be",
+                "url": "https://music.humanoids.be/channels/djid3ot",
+                "feed": "https://music.humanoids.be/api/v1/channels/djid3ot/rss"
+            }
+        ],
+        "pgp": "AE530058EFE7FD60",
+        "dateOfBirth": "1995-03-21"
+    },
+    "work": [
+        {
+            "company": "mcs Software AG",
+            "location": "Bern",
+            "description": "CAM software development services",
+            "position": "Intern software developer",
+            "website": "http://mcs.ch",
+            "startDate": "2013-07-22",
+            "endDate": "2013-09-06",
+            "summary": "Graphical vectorization tool of 2D blueprints for cost estimation",
+            "highlights": [
+                "VisualC++",
+                "Qt4"
+            ]
+        },
+        {
+            "company": "Inware AG",
+            "location": "Zürich",
+            "description": "Web agency",
+            "position": "Web developer",
+            "website": "https://inware.ch",
+            "startDate": "2016-10-31",
+            "endDate": "2017-02-03",
+            "summary": "Creating and adjusting sites based on proprietary CMS with e-commerce",
+            "highlights": [
+                "Custom PHP CMS development (including e-commerce integrations)",
+                "Frontend Javascript with jQuery",
+                "CSS including Bootstrap 3"
+            ]
+        },
+        {
+            "company": "Engel & Völkers Frohnau-Köpenick GmbH",
+            "location": "Remote",
+            "description": "Real estate agency",
+            "position": "Programmer",
+            "website": "https://www.eundv.berlin/",
+            "startDate": "2017-11-22",
+            "endDate": "2019-05-31",
+            "summary": "Full-stack development of real estate platform",
+            "highlights": [
+                "Custom PHP ticketing system with PostgreSQL backend",
+                "TypeScript, jQuery based frontend, compatible with IE11",
+                "Bootstrap 3"
+            ]
+        },
+        {
+            "company": "Control4 Switzerland AG",
+            "location": "Bern",
+            "description": "Smart Home automation",
+            "position": "Software Development Engineer",
+            "website": "https://control4.com",
+            "startDate": "2019-06-01",
+            "endDate": "2020-12-31",
+            "summary": "Architecture and development of middleware for Neeo remote control, DevOps",
+            "highlights": [
+                "NodeJS HTTP and UDP servers",
+                "Debian Packaging",
+                "DevOps (Python, Ansible, Gitlab, Bitbucket)",
+                "LUA driver development",
+                "Preact frontend with redux (reselect, sagas)"
+            ]
+        }
+    ],
+    "volunteer": [
+        {
+            "organization": "Musikgesellschaft Mühlethurnen",
+            "position": "Secretary",
+            "website": "https://mgmuehlethurnen.ch",
+            "startDate": "2018-01-12",
+            "summary": "Active as a player since 2013",
+            "highlights": []
+        },
+        {
+            "organization": "Musikgesellschaft Mühlethurnen",
+            "position": "Publicity for 150 year anniversary",
+            "website": "https://mgmuehlethurnen.ch/jubilaeum",
+            "startDate": "2018-01-12",
+            "endDate": "2019-12-13",
+            "summary": "Organization of sponsors, fullfilling sponsoring rewards and marketing",
+            "highlights": [
+                "Managed to mobilize many local companies"
+            ]
+        },
+        {
+            "organization": "Mozilla Switzerland",
+            "position": "Speaker",
+            "website": "https://mozilla.ch",
+            "startDate": "2013-09-01",
+            "endDate": "2018-12-31",
+            "summary": "Presented multiple topics and helped with organization",
+            "highlights": [
+                "Public speaking",
+                "Community management"
+            ]
+        },
+        {
+            "organization": "Mozilla",
+            "position": "Volunteer Developer/Support",
+            "website": "https://mozilla.org",
+            "startDate": "2010-04-01",
+            "summary": "Multiple code contributions in various products as well as assistance to community developers",
+            "highlights": [
+                "IRCv3 patches for Thunderbird (and Instantbird)",
+                "Multiple extensions (for Firefox)",
+                "Helping community extension developers with their issues via chat and forums"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "Primarschule Mühlethurnen",
+            "area": "",
+            "studyType": "",
+            "startDate": "2000-08-01",
+            "endDate": "2007-07-31"
+        },
+        {
+            "institution": "Sekundarschule Riggisberg",
+            "area": "",
+            "studyType": "",
+            "startDate": "2007-08-01",
+            "endDate": "2010-07-31",
+            "courses": [
+                "Eigene Webseite erstellen"
+            ]
+        },
+        {
+            "institution": "Gymnasium Bern-Neufeld",
+            "area": "Physics and Applied Mathematics",
+            "studyType": "Matura",
+            "startDate": "2010-08-01",
+            "endDate": "2013-07-31",
+            "courses": [
+                "Computer Science",
+                "Choir",
+                "Orchestra"
+            ]
+        },
+        {
+            "institution": "ETH Zürich",
+            "area": "Information Technology and Electronic Engineering",
+            "studyType": "Bachelor (incomplete)",
+            "startDate": "2013-09-01",
+            "endDate": "2015-09-01",
+            "courses": []
+        },
+        {
+            "institution": "ETH Zürich",
+            "area": "Computer Science",
+            "studyType": "Bachelor (incomplete)",
+            "startDate": "2015-09-01",
+            "endDate": "2016-09-01",
+            "courses": []
+        }
+    ],
+    "awards": [],
+    "publications": [
+        {
+            "name": "Sustainable smart home with the TXT",
+            "publisher": "ft:pedia",
+            "releaseDate": "2019-03-30",
+            "url": "https://ftcommunity.de/ftpedia/2019/2019-1/",
+            "summary": "Implementation of a python WebThing application for the fischertechnik TXT"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Web Development",
+            "level": "Very good",
+            "keywords": [
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "PHP",
+                "TypeScript",
+                "JSX",
+                "React",
+                "Vue"
+            ]
+        },
+        {
+            "name": "Application Development",
+            "level": "Sound",
+            "keywords": [
+                "C++",
+                "Java"
+            ]
+        },
+        {
+            "name": "New lanugages",
+            "level": "Beginner",
+            "keywords": [
+                "Rust",
+                "Go"
+            ]
+        },
+        {
+            "name": "DevOps",
+            "level": "Sound",
+            "keywords": [
+                "Bash",
+                "Python",
+                "TravisCI",
+                "istanbul",
+                "eslint",
+                "Docker",
+                "Ansible"
+            ]
+        },
+        {
+            "name": "Circuit design",
+            "level": "Beginner",
+            "keywords": [
+                "Verilog"
+            ]
+        },
+        {
+            "name": "Paper",
+            "level": "Proficient",
+            "keywords": [
+                "LaTeX"
+            ]
+        }
+    ],
+    "languages": [
+        {
+            "language": "German",
+            "fluency": "Native"
+        },
+        {
+            "language": "English",
+            "fluency": "Fluent"
+        },
+        {
+            "language": "French",
+            "fluency": "Basic"
+        }
+    ],
+    "interests": [],
+    "references": [],
+    "projects": [
+        {
+            "name": "Live Stream Notifier",
+            "description": "Firefox extension for observing the state of streams on multiple platforms",
+            "highlights": [
+                "Supports many streaming platforms",
+                "3000 concurrent users at one point"
+            ],
+            "keywords": [
+                "React",
+                "JSX",
+                "JavaScript",
+                "webpack",
+                "transifex"
+            ],
+            "startDate": "2012-11-04",
+            "url": "https://streamnotifier.ch",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "browser-extension",
+            "source": "https://github.com/freaktechnik/justintv-stream-notifications"
+        },
+        {
+            "name": "Musikgesellschaft Mühlethurnen",
+            "description": "Event centric WordPress extension and theme",
+            "highlights": [
+                "Generates iCal invitations and an iCal calendar of all events",
+                "Dynamic front page to reduce maintenance burden"
+            ],
+            "keywords": [
+                "PHP",
+                "WordPress"
+            ],
+            "startDate": "2017-08-08",
+            "url": "https://mgmuehlethurnen.ch",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "website",
+            "source": "https://github.com/freaktechnik/band-concerts-theme"
+        },
+        {
+            "name": "Hook Head`s irish Pub",
+            "description": "Website for a local pop-up pub",
+            "highlights": [
+                "Vue based static page"
+            ],
+            "keywords": [
+                "Vue",
+                "Gridsome",
+                "GraphQL"
+            ],
+            "startDate": "2019",
+            "url": "https://hookheads.ch",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "website"
+        },
+        {
+            "name": "Twitch Bot Directory",
+            "description": "Collection of service bots for Twitch chat",
+            "highlights": [
+                "Automated pruning and updating of Twitch based data",
+                "Extensive automated checks for submissions"
+            ],
+            "keywords": [
+                "PHP",
+                "Bootstrap",
+                "Twig"
+            ],
+            "startDate": "2015-11-20",
+            "url": "https://twitchbots.info",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "website",
+            "source": "https://github.com/freaktechnik/twitchbots"
+        },
+        {
+            "name": "eslint-plugin-array-func",
+            "description": "Rules for array method related patterns",
+            "highlights": [
+                "Extensive AST rules for finding array constructs"
+            ],
+            "keywords": [
+                "eslint",
+                "JavaScript",
+                "AST"
+            ],
+            "startDate": "2017-10-06",
+            "url": "https://www.npmjs.com/package/eslint-plugin-array-func",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "library",
+            "source": "https://github.com/freaktechnik/eslint-plugin-array-func"
+        },
+        {
+            "name": "GitHub Projects Content Queue",
+            "description": "GitHub Projects based Tweet management",
+            "highlights": [
+                "Automated triaging of incoming mentions",
+                "Multiple sources for potential tweets",
+                "Scheduling and rate limit function for outgoing tweets",
+                "Support for Mastodon and Twitter"
+            ],
+            "keywords": [
+                "JavaScript",
+                "Docker"
+            ],
+            "startDate": "2016-10-26",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "service",
+            "source": "https://github.com/mozillach/gh-projects-content-queue"
+        },
+        {
+            "name": "Emotes Showcase",
+            "description": "Twitch extension for showcasing a broadcaster's emotes",
+            "highlights": [
+                "Requires minimal configuration from broadcaster, emotes are discovered automatically",
+                "Supports alternative emote systems like FFZ and BTTV"
+            ],
+            "keywords": [
+                "JavaScript",
+                "PHP"
+            ],
+            "startDate": "2018-07-28",
+            "url": "https://www.twitch.tv/ext/3yumzvi6r4wfycsk7vt1kbtto9s0n3",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "twitch-extension",
+            "source": "https://github.com/freaktechnik/twitch-emotes-extension"
+        },
+        {
+            "name": "Notification Sound",
+            "description": "Firefox extension that plays a sound whenever a notification is shown",
+            "highlights": [
+                "Overriding web APIs from the secure extension context",
+                "API for other extensions to invoke the sound handling"
+            ],
+            "keywords": [
+                "JavaScript",
+                "transifex"
+            ],
+            "startDate": "2015-11-23",
+            "url": "https://addons.mozilla.org/addon/notification-sound?utm_source=portfolio",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "browser-extension",
+            "source": "https://github.com/freaktechnik/notification-sounds"
+        },
+        {
+            "name": "Advanced GitHub Notifier",
+            "description": "Show new GitHub notifications as Firefox notification and offer quick access to all notifications",
+            "highlights": [
+                "Multi account support, including GitHub enterprise"
+            ],
+            "keywords": [
+                "JavaScript"
+            ],
+            "startDate": "2016-10-12",
+            "url": "https://addons.mozilla.org/addon/advanced-github-notifier/?utm_source=portfolio",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "browser-extension",
+            "source": "https://github.com/freaktechnik/advanced-github-notifier"
+        },
+        {
+            "name": "Blockflötenchor Bern",
+            "description": "Website concept and design for a local recorder choir",
+            "highlights": [
+                "Dynamic font page with latest events",
+                "Archive for the bi-yearly publication BCB-News",
+                "Newsletter integration for easily advertising new concerts"
+            ],
+            "keywords": [
+                "PHP",
+                "WordPress"
+            ],
+            "startDate": "2017-08-08",
+            "url": "https://blockfloetenchor.ch",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "website",
+            "source": "https://github.com/freaktechnik/band-concerts-theme-bcb"
+        },
+        {
+            "name": "Transifex Loader",
+            "description": "Webpack loader for automated import of the latest translations from transifex",
+            "highlights": [
+                "Uses the tx tool configuration to determine the localization file mapping",
+                "Persists the updated file back to the filesystem",
+                "Acts as a noop when offline"
+            ],
+            "keywords": [
+                "webpack",
+                "JavaScript",
+                "transifex"
+            ],
+            "startDate": "2016-08-11",
+            "url": "https://www.npmjs.com/package/transifex-loader",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "library",
+            "source": "https://github.com/freaktechnik/transifex-loader"
+        },
+        {
+            "name": "Twitch Chatlog",
+            "description": "Download the full chatlogs belonging to a Twitch VOD",
+            "highlights": [
+                "Displays badges as colored UTF-8 characters",
+                "Supports displaying emotes in terminals with image output",
+                "Can output to JSON for further processing"
+            ],
+            "keywords": [
+                "JavaScript"
+            ],
+            "startDate": "2016-07-21",
+            "url": "https://www.npmjs.com/package/twitch-chatlog",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "cli",
+            "source": "https://github.com/freaktechnik/twitch-chatlog"
+        },
+        {
+            "name": "get-firefox",
+            "description": "Download Firefox binaries from the CLI",
+            "highlights": [
+                "Supports most release channels, including Android"
+            ],
+            "keywords": [
+                "JavaScript"
+            ],
+            "startDate": "2015-05-18",
+            "url": "https://www.npmjs.com/package/get-firefox",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "cli",
+            "source": "https://github.com/freaktechnik/get-firefox"
+        },
+        {
+            "name": "Coupon Booklet",
+            "description": "Local coupon code management",
+            "highlights": [
+                "Stores coupons locally, no web service involved",
+                "Automatically cleans up expired coupons",
+                "Suggests coupons available for the current tab"
+            ],
+            "keywords": [
+                "JavaScript"
+            ],
+            "startDate": "2019-01-20",
+            "url": "https://addons.mozilla.org/addon/coupon-booklet/?utm_source=portfolio",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "browser-extension",
+            "source": "https://github.com/freaktechnik/coupon-booklet"
+        },
+        {
+            "name": "Netatmo CO₂ Indicator",
+            "description": "Show the CO₂ level reported by netatmo in the webbrowser toolbar",
+            "highlights": [
+                "Can show notifications when it's a good time to open a window"
+            ],
+            "keywords": [
+                "JavaScript"
+            ],
+            "startDate": "2018-07-21",
+            "url": "https://addons.mozilla.org/addon/netatmo-co-indicator/?utm_source=portfolio",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "browser-extension",
+            "source": "https://github.com/freaktechnik/netatmo-indicator"
+        },
+        {
+            "name": "radio-hoster",
+            "description": "Automatically hosts Talk Shows on a Twitch channel to create a talk radio-like experience",
+            "highlights": [
+                "Filters out 24/7 shows for more varied content",
+                "Can host shows scheduled for certain time slots with priority"
+            ],
+            "keywords": [
+                "JavaScript",
+                "Heroku"
+            ],
+            "startDate": "2017-08-21",
+            "url": "https://twitch.tv/hostedradio",
+            "roles": [
+                "Lead Developer"
+            ],
+            "type": "service",
+            "source": "https://github.com/freaktechnik/radio-hoster"
+        },
+        {
+            "name": "Mozilla & Open Source",
+            "description": "Informational presentation on Open Source contribution in the Mozilla ecosystem",
+            "highlights": [
+                "What contribution opportunities are there",
+                "How to file a good bug report"
+            ],
+            "keywords": [
+                "Open Source",
+                "Mozilla"
+            ],
+            "startDate": "2018-11-09",
+            "endDate": "2018-11-09",
+            "url": "https://slides.com/freaktechnik/mozilla",
+            "roles": [
+                "Guest Speaker"
+            ],
+            "entity": "SFGZ IAD Kurs",
+            "type": "talk",
+            "eventUrl": "https://sfgz.ch/angebot/weiterbildung/hoehere-fachschule/IAD"
+        },
+        {
+            "name": "Introduction to WebExtensions",
+            "keywords": [
+                "Mozilla",
+                "Browser Extensions",
+                "WebExtension"
+            ],
+            "startDate": "2016-09-19",
+            "endDate": "2019-09-19",
+            "url": "https://slides.com/freaktechnik/webextensions",
+            "roles": [
+                "Speaker"
+            ],
+            "entity": "Mozilla Switzerland Meetup",
+            "type": "talk",
+            "eventUrl": "https://www.meetup.com/Mozilla-Meetup-Switzerland/events/233444437/"
+        },
+        {
+            "name": "Getting started building Firefox",
+            "description": "A brief introduction to the prerequisites for building Firefox",
+            "keywords": [
+                "Mozilla",
+                "Firefox"
+            ],
+            "startDate": "2015-10-17",
+            "endDate": "2015-10-17",
+            "url": "https://slides.com/freaktechnik/build-firefox",
+            "roles": [
+                "Speaker",
+                "Facilitator"
+            ],
+            "entity": "Mozilla Day Switzerland",
+            "type": "workshop",
+            "eventUrl": "https://www.meetup.com/Mozilla-Meetup-Switzerland/events/224749550/"
+        },
+        {
+            "name": "Promises + Generators = <3",
+            "description": "An introduction to new ES2015 features and how in combination they're awesome",
+            "keywords": [
+                "Promise",
+                "Generator",
+                "Async Function",
+                "JavaScript"
+            ],
+            "startDate": "2015-09-15",
+            "endDate": "2015-09-15",
+            "url": "https://slides.com/freaktechnik/promises-generators-3",
+            "roles": [
+                "Speaker"
+            ],
+            "entity": "Mozilla Switzerland Meetup",
+            "type": "talk",
+            "eventUrl": "https://www.meetup.com/Mozilla-Meetup-Switzerland/events/224750275/"
+        },
+        {
+            "name": "Introduction to IndexedDB",
+            "keywords": [
+                "IndexedDB",
+                "JavaScript"
+            ],
+            "startDate": "2015-05-05",
+            "endDate": "2015-05-05",
+            "url": "https://www.slideshare.net/freaktechnik/indexed-db-47797273",
+            "roles": [
+                "Speaker"
+            ],
+            "entity": "Mozilla Switzerland Meetup",
+            "type": "talk",
+            "eventUrl": "https://www.meetup.com/Mozilla-Meetup-Switzerland/events/221737911/"
+        },
+        {
+            "name": "Firefox Add-on SDK",
+            "keywords": [
+                "Firefox",
+                "Add-on",
+                "Browser Extensions"
+            ],
+            "startDate": "2014-10-08",
+            "endDate": "2014-10-08",
+            "url": "https://www.slideshare.net/freaktechnik/brief-introduction-to-the-mozilla-addon-sdk",
+            "roles": [
+                "Speaker"
+            ],
+            "entity": "Mozilla Switzerland Meetup",
+            "type": "talk",
+            "eventUrl": "https://www.meetup.com/Mozilla-Meetup-Switzerland/events/207317202/"
+        },
+        {
+            "name": "Nightingale Media Player",
+            "description": "Overview over the Songbird fork Nightingale",
+            "keywords": [
+                "XULRunner",
+                "GStreamer",
+                "Music"
+            ],
+            "startDate": "2013-07-11",
+            "endDate": "2013-07-11",
+            "url": "https://nightingale-media-player.github.io/nightingale-slides/rmll13",
+            "roles": [
+                "Speaker"
+            ],
+            "entity": "RMLL",
+            "type": "talk",
+            "eventUrl": "https://schedule2013.rmll.info/programme/technique/developpement-logiciel/article/nightingale-media-player",
+            "recordingUrl": "https://rmll.ubicast.tv/permalink/v124f0be379236fb1e6b/"
+        },
+        {
+            "entity": "Alterszentrum Büel",
+            "name": "Allrounder Technischer Dienst",
+            "url": "https://buel-cham.ch/",
+            "startDate": "2015-01-05",
+            "endDate": "2015-02-13",
+            "description": "Supportive activities to the custodian",
+            "highlights": [
+                "Large area cleaning",
+                "Kitchen support"
+            ],
+            "type": "civil service",
+            "roles": [
+                "Custodian assistant",
+                "Kitchen assistant"
+            ]
+        },
+        {
+            "entity": "Verein Grünwerk",
+            "name": "Landschaftspflege",
+            "url": "https://www.verein-gruenwerk.ch/",
+            "startDate": "2017-02-20",
+            "endDate": "2017-08-18",
+            "description": "Various outdoor activities in groups for nature or landscape preservation",
+            "highlights": [
+                "Entering neophyte populations into a GIS database",
+                "Combatting neophytes in various landscapes",
+                "Brush maintenance and clearing"
+            ],
+            "type": "civil service",
+            "roles": [
+                "Landscaping",
+                "Data collector"
+            ]
+        }
+    ],
+    "meta": {
+        "canonical": "https://humanoids.be/resume.json",
+        "version": "1.0.0",
+        "lastModified": "2020-11-10"
+    }
+}

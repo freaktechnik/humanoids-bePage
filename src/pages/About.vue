@@ -34,7 +34,7 @@ export default {
     },
     computed: {
         fullName() {
-            return `${this.$page.metadata.name.given} ${this.$page.metadata.name.family}`;
+            return this.$page.metadata.name;
         }
     },
     metaInfo() {
@@ -48,10 +48,7 @@ export default {
 <page-query>
     query About {
         metadata {
-            name {
-                given
-                family
-            }
+            name
             siteName
         }
     }

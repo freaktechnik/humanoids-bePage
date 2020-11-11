@@ -4,10 +4,9 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
-const info = require("./src/data/info.json");
 
 module.exports = {
-    siteName: info.title,
+    siteName: 'humanoids bePage',
     siteDescription: "Personal page of Martin Giger. Mainly links to profiles on other pages.",
     siteUrl: "https://humanoids.be",
     plugins: [
@@ -63,5 +62,14 @@ module.exports = {
                 msTileColor: '#000000'
             }
         }
-    ]
+    ],
+    chainWebpack(config) {
+        config.module.rule('resume-file')
+            .test(/resume.json$/)
+            .set('loader', 'file-loader')
+            .set('type', 'javascript/auto')
+            .set('options', {
+                name: '[name].[ext]'
+            });
+    }
 };

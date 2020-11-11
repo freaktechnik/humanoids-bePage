@@ -15,6 +15,18 @@ const { default: mastodonGenerator } = require("megalodon"),
     getStream = require("get-stream"),
     NEXT = 1,
     ID_WIDTH = 3,
+    TALK_TYPES = [
+        'talk',
+        'workshop'
+    ],
+    PROJECT_TYPES = [
+        'service',
+        'cli',
+        'library',
+        'website',
+        'twitch-extension',
+        'browser-extension'
+    ],
 
     getToots = (userId, baseUrl) => {
         const mastoAPI = mastodonGenerator(
@@ -211,90 +223,138 @@ module.exports = function(api) {
             });
         }
 
-        const events = store.addCollection({
+        const resume = require("./src/data/resume.json"),
+            events = store.addCollection({
                 typeName: "Event"
             }),
             talks = store.addCollection({
                 typeName: "Talk"
-            });
+            }),
+            eventItems = resume.projects.filter((p) => TALK_TYPES.includes(p.type));
         talks.addReference("event", "Event");
 
-        const eventItems = require("./src/data/events.json");
         for(const talk of eventItems) {
             const eventNode = events.addNode({
-                title: talk.event.title,
-                date: talk.event.date,
-                url: talk.event.url
+                title: talk.entity,
+                date: talk.startDate,
+                url: talk.eventUrl
             });
             talks.addNode({
-                title: talk.title,
-                slides: talk.slides,
-                recording: talk.recording,
+                title: talk.name,
+                slides: talk.url,
+                recording: talk.recordingUrl,
                 event: eventNode.id,
-                date: talk.event.date
+                date: talk.startDate
             });
         }
 
         const projects = store.addCollection({
-            typeName: "Project"
-        });
-        const projectItems = require("./src/data/projects.json");
+                typeName: "Project"
+            }),
+            projectItems = resume.projects.filter((p) => PROJECT_TYPES.includes(p.type));
         for(const [
             id,
             project
         ] of projectItems.entries()) {
             projects.addNode({
-                title: project.title,
+                title: project.name,
                 source: project.source,
                 url: project.url,
-                type: project.type,
-                tag: project.tag,
+                type: project.roles.includes('Lead Developer') ? 'creating' : 'contributing',
+                tag: project.type,
                 id: (id + NEXT).toString().padStart(ID_WIDTH, '0')
             });
         }
 
         const timeline = store.addCollection({
-            typeName: 'TimelineEvent'
-        });
-        const timelineData = require("./src/data/timeline.json");
-        for(const timelineEvent of timelineData) {
+                typeName: 'TimelineEvent'
+            }),
+            civilServiceItems = resume.projects.filter((p) => p.type === 'civil service');
+        for(const timelineEvent of resume.work) {
             timeline.addNode({
-                title: timelineEvent.title,
-                date: timelineEvent.start,
-                extra: timelineEvent.extra,
-                end: timelineEvent.end,
-                type: timelineEvent.type,
-                graduated: timelineEvent.graduated
+                title: timelineEvent.position,
+                date: timelineEvent.startDate,
+                extra: [
+                    {
+                        title: timelineEvent.company,
+                        content: timelineEvent.location
+                    },
+                    {
+                        title: timelineEvent.description,
+                        content: timelineEvent.summary
+                    }
+                ],
+                end: timelineEvent.endDate,
+                type: "work"
+            });
+        }
+        for(const timelineEvent of resume.education) {
+            //TODO somehow get graduated flag
+            timeline.addNode({
+                title: timelineEvent.institution,
+                date: timelineEvent.startDate,
+                extra: timelineEvent.area ? [ {
+                    title: timelineEvent.area,
+                    content: timelineEvent.studyType
+                } ] : [],
+                end: timelineEvent.endDate,
+                type: "education"
+                //graduated: timelineEvent.graduated
+            });
+        }
+        for(const timelineEvent of civilServiceItems) {
+            timeline.addNode({
+                title: timelineEvent.name,
+                date: timelineEvent.startDate,
+                extra: [ {
+                    title: timelineEvent.entity,
+                    content: timelineEvent.description
+                } ],
+                end: timelineEvent.endDate,
+                type: "civil-service"
             });
         }
 
-        const info = require("./src/data/info.json");
-        store.addMetadata('name', info.name);
-        store.addMetadata('country', info.address.country);
-        store.addMetadata('city', info.address.city);
-        store.addMetadata('dateOfBirth', info.dateOfBirth);
+        store.addMetadata('name', resume.basics.name);
+        store.addMetadata('country', resume.basics.location.countryCode);
+        store.addMetadata('city', resume.basics.location.city);
+        store.addMetadata('dateOfBirth', resume.basics.dateOfBirth);
 
         const contacts = store.addCollection({
             typeName: 'ContactMethod'
         });
-        for(const contact of info.contact) {
-            contacts.addNode({
-                title: contact.type,
-                content: contact.username
-            });
+        for(const contact of resume.basics.profiles) {
+            if(contact.network === 'Matrix' ) {
+                contacts.addNode({
+                    title: 'matrix',
+                    content: contact.username,
+                    url: contact.url
+                });
+            }
         }
+        contacts.addNode({
+            title: 'email',
+            content: resume.basics.email
+        });
+        contacts.addNode({
+            title: 'pgp',
+            content: resume.basics.pgp
+        });
 
         const languages = store.addCollection({
             typeName: 'Language'
         });
-        for(const language of info.languages) {
+        for(const language of resume.languages) {
             languages.addNode({
                 title: language
             });
         }
 
         process.stdout.write("Loading Toots\n");
-        const toots = await getToots(info.mastodon.id, info.mastodon.baseUrl),
+        const mastodonInfo = resume.basics.profiles.find((p) => p.network === 'Mastodon'),
+            profileUrl = new URL(mastodonInfo.url),
+            baseUrl = `${profileUrl.protocol}//${profileUrl.hostname}/`,
+            toots = await getToots(mastodonInfo.id, baseUrl),
             tootStore = store.addCollection({
                 typeName: 'Toot'
             });
@@ -320,7 +380,8 @@ module.exports = function(api) {
 
         process.stdout.write("Loading Tweets\n");
         try {
-            const tweets = await getTweets(info.twitter),
+            const twitterInfo = resume.basics.profiles.find((p) => p.network == 'Twitter');
+            const tweets = await getTweets(twitterInfo.id),
                 tweetStore = store.addCollection({
                     typeName: 'Tweet'
                 }),
@@ -362,7 +423,8 @@ module.exports = function(api) {
 
         process.stdout.write("Loading Tracks\n");
         try {
-            const tracks = await getFeed(info.funkwhale),
+            const funkwhaleInfo = resume.basics.profiles.find((p) => p.network === 'Funkwhale');
+            const tracks = await getFeed(funkwhaleInfo.feed),
                 trackStore = store.addCollection({
                     typeName: 'Track'
                 });

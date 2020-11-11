@@ -112,6 +112,7 @@ import MainFooter from '../components/Footer.vue';
 import Info from '../components/Info.vue';
 import beImage from '../favicon.png';
 import avatarImage from '../assets/avatar.jpg';
+import resumeLocation from '../data/resume.json';
 
 //TODO make menu a dropdown instead
 
@@ -174,7 +175,7 @@ export default {
     },
     computed: {
         fullName() {
-            return `${this.$page.metadata.name.given} ${this.$page.metadata.name.family}`;
+            return this.$page.metadata.name;
         },
         timelinePages() {
             const copy = Object.assign({}, this.pages);
@@ -211,7 +212,6 @@ export default {
             about: {
                 "@type": "Person",
                 name: this.fullName,
-                additionalName: this.$page.metadata.name.additional,
                 email: `mailto:${this.$page.contact.edges.find((c) => c.node.title === 'email').node.content}`,
                 image: this.$page.metadata.siteUrl + avatarImage,
                 url: this.$page.metadata.siteUrl,
@@ -260,7 +260,7 @@ export default {
                 },
                 {
                     name: 'twitter:creator',
-                    content: '@freaktechnik'
+                    content: '@freaktechnik'//TODO get from resume
                 },
                 {
                     name: 'twitter:image',
@@ -268,11 +268,11 @@ export default {
                 },
                 {
                     name: 'profile:first_name',
-                    content: this.$page.metadata.name.given
+                    content: this.$page.metadata.name.split(' ').shift()
                 },
                 {
                     name: 'profile:last_name',
-                    content: this.$page.metadata.name.family
+                    content: this.$page.metadata.name.split(' ').pop()
                 },
                 {
                     name: 'profile:username',
@@ -291,6 +291,11 @@ export default {
                 {
                     rel: 'canonical',
                     href: this.$page.metadata.siteUrl
+                },
+                {
+                    rel: 'alternate',
+                    type: 'application/json',
+                    href: `${this.$page.metadata.siteUrl}/${resumeLocation}`
                 }
             ],
             script: [ {
@@ -312,13 +317,9 @@ export default {
 </script>
 
 <page-query>
-    query Index {
+    query {
         metadata {
-            name {
-                given
-                additional
-                family
-            }
+            name
             siteUrl
             siteName
         }
@@ -405,7 +406,6 @@ export default {
                         title
                         content
                     }
-                    graduated
                     id
                 }
             }

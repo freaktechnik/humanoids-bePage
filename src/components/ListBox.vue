@@ -28,12 +28,6 @@
                                 :label="item.node.type"
                             /><span>{{ item.node.title }}</span>
                         </h1>
-                        <p v-if="!!item.node.graduated">
-                            <octicon
-                                icon="verified"
-                                label="Graduated with"
-                            /> {{ item.node.graduated }}
-                        </p>
                         <p
                             v-for="extra of item.node.extra"
                             :key="extra.title"

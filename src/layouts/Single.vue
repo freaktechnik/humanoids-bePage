@@ -15,7 +15,7 @@ export default {
         GlobalFooter
     },
     metaInfo() {
-        const META_NAME = `${this.$static.metadata.name.given} ${this.$static.metadata.name.family}`;
+        const META_NAME = this.$static.metadata.name;
         return {
             meta: [ {
                 name: 'author',
@@ -34,10 +34,7 @@ export default {
     query Layout {
         metadata {
             siteUrl
-            name {
-                given
-                family
-            }
+            name
         }
     }
 </static-query>
