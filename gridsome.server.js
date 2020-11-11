@@ -310,19 +310,26 @@ module.exports = function(api) {
         store.addMetadata('country', resume.basics.location.countryCode);
         store.addMetadata('city', resume.basics.location.city);
         store.addMetadata('dateOfBirth', resume.basics.dateOfBirth);
+        store.addMetadata('teaser', resume.basics.summary);
 
-        const contacts = store.addCollection({
-            typeName: 'ContactMethod'
-        });
-        for(const contact of resume.basics.profiles) {
-            if(contact.network === 'Matrix' ) {
+
+        const profiles = store.addCollection({
+                typeName: 'Profile'
+            }),
+            contacts = store.addCollection({
+                typeName: 'ContactMethod'
+            });
+        for(const profile of resume.basics.profiles) {
+            profiles.addNode(profile);
+            if(profile.network === 'Matrix' ) {
                 contacts.addNode({
                     title: 'matrix',
-                    content: contact.username,
-                    url: contact.url
+                    content: profile.username,
+                    url: profile.url
                 });
             }
         }
+
         contacts.addNode({
             title: 'email',
             content: resume.basics.email

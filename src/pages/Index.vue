@@ -40,6 +40,7 @@
                         <contact
                             :content="contact.node.content"
                             :type="contact.node.title"
+                            :url="contact.node.url"
                         />
                     </li>
                 </ul>
@@ -127,7 +128,18 @@ export default {
     data() {
         const listener = (event) => this.resetPage(event);
         return {
-            pages: {
+            page: 'info',
+            showMenu: false,
+            listener,
+            query: null
+        };
+    },
+    computed: {
+        pages() {
+            const mastodon = this.$page.profiles.edges.find((p) => p.node.network === 'Mastodon').node,
+                twitter = this.$page.profiles.edges.find((p) => p.node.network === 'Twitter').node,
+                funkwhale = this.$page.profiles.edges.find((p) => p.node.network === 'Funkwhale').node;
+            return {
                 info: {
                     title: 'Info'
                 },
@@ -139,7 +151,7 @@ export default {
                 projects: {
                     title: 'Projects',
                     data: 'projects',
-                    link: 'https://github.com/freaktechnik'
+                    link: this.$page.profiles.edges.find((p) => p.node.network === 'GitHub').node.url
                 },
                 talks: {
                     title: 'Talks',
@@ -152,28 +164,22 @@ export default {
                     class: 'posts'
                 },
                 mastodon: {
-                    title: '@freaktechnik@chaos.social',
+                    title: mastodon.username,
                     data: 'toots',
-                    link: 'https://chaos.social/@freaktechnik'
+                    link: mastodon.url
                 },
                 twitter: {
-                    title: '@freaktechnik@twitter.com',
+                    title: twitter.username,
                     data: 'tweets',
-                    link: 'https://twitter.com/freaktechnik'
+                    link: twitter.url
                 },
                 tracks: {
-                    title: '@djid3ot@music.humanoids.be',
+                    title: funkwhale.username,
                     data: 'tracks',
-                    link: 'https://music.humanoids.be/channels/djid3ot'
+                    link: funkwhale.url
                 }
-            },
-            page: 'info',
-            showMenu: false,
-            listener,
-            query: null
-        };
-    },
-    computed: {
+            };
+        },
         fullName() {
             return this.$page.metadata.name;
         },
@@ -215,12 +221,7 @@ export default {
                 email: `mailto:${this.$page.contact.edges.find((c) => c.node.title === 'email').node.content}`,
                 image: this.$page.metadata.siteUrl + avatarImage,
                 url: this.$page.metadata.siteUrl,
-                sameAs: [
-                    'https://twitter.com/freaktechnik',
-                    'https://facebook.com/IamsureyoudidntguessthisprofileurlIamsureyoudidaha',
-                    'https://chaos.social/@freaktechnik',
-                    'https://github.com/freaktechnik'
-                ]
+                sameAs: this.$page.profiles.edges.map((p) => p.node.url)
             }
         };
         return {
@@ -260,7 +261,7 @@ export default {
                 },
                 {
                     name: 'twitter:creator',
-                    content: '@freaktechnik'//TODO get from resume
+                    content: this.$page.profiles.edges.find((p) => p.node.network === 'Twitter').node.username
                 },
                 {
                     name: 'twitter:image',
@@ -323,12 +324,13 @@ export default {
             siteUrl
             siteName
         }
-        contact: allContactMethod(order: ASC) {
+        contact: allContactMethod(order: ASC, sortBy: "title") {
             edges {
                 node {
                     title
                     content
                     id
+                    url
                 }
             }
         }
@@ -461,6 +463,15 @@ export default {
                         alt
                     }
                     language
+                }
+            }
+        }
+        profiles: allProfile(order: ASC, sortBy: "network") {
+            edges {
+                node {
+                    network
+                    username
+                    url
                 }
             }
         }

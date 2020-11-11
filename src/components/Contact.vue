@@ -5,7 +5,7 @@
         <a
             v-else
             rel="me noopener"
-            :href="url"
+            :href="localUrl"
             :itemprop="itempropType"
         >{{ content }}</a>
     </span>
@@ -38,10 +38,17 @@ export default {
         type: {
             type: String,
             required: true
+        },
+        url: {
+            type: String,
+            default: ''
         }
     },
     computed: {
-        url() {
+        localUrl() {
+            if(this.url) {
+                return this.url;
+            }
             switch(this.type) {
             case 'email':
                 return `mailto:${encodeURI(this.content)}`;

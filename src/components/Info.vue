@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- eslint-disable vue/singleline-html-element-content-newline -->
-        <p class="info-teaser">Web developer, Euphonium player, travels by train</p>
+        <p class="info-teaser">{{ $static.metadata.teaser }}</p>
         <!-- eslint-enable vue/singleline-html-element-content-newline -->
         <p><octicon icon="home" /> Living in {{ $static.metadata.city }}, {{ $static.metadata.country }}</p>
         <p>
@@ -32,6 +32,7 @@ export default {
             city
             country
             dateOfBirth
+            teaser
         }
     }
 </static-query>
