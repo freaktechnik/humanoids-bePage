@@ -18,7 +18,7 @@
             </section>
             <section>
                 <h1>Privacy</h1>
-                <p>This page does not contain any trackers. The images loaded in the Mastodon and Twitter views are both loaded directly from their respective CDNs, which are typically chaos.social and pic.twitter.com. Their respective privacy policies apply.</p>
+                <p>This page does not contain any trackers. The images loaded in the Mastodon and Twitter views are cached on this server.</p>
                 <p>All loads are logged by the hoster on the server and the access logs are processed into anonymous access statistics.</p>
             </section>
         </main>
