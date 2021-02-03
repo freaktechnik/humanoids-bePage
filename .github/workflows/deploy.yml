@@ -1,0 +1,28 @@
+name: deploy
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '* 22 * * *'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm ci
+      - run: npm run build
+        name: build
+        env:
+          TWITTER_KEY: ${{ secrets.TWITTER_KEY }}
+          TWITTER_SECRET: ${{ secrets.TWITTER_SECRET }}
+      - uses: kostya-ten/ssh-server-deploy@v4
+        name: deploy
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          port: ${{ secrets.SERVER_PORT }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          private_key: ${{ secrets.PRIVATE_KEY }}
+          scp_source: dist/*
+          scp_target: ~/public_html/hbp/
