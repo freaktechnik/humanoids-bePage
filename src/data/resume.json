@@ -153,6 +153,13 @@
                 "Multiple extensions (for Firefox)",
                 "Helping community extension developers with their issues via chat and forums"
             ]
+        },
+        {
+            "organization": "Kirchen Belp",
+            "position": "Sound Engineer",
+            "startDate": "2010",
+            "endDate": "2011",
+            "summary": "Sound engineering and grip"
         }
     ],
     "education": [
@@ -288,28 +295,6 @@
     "interests": [],
     "references": [],
     "projects": [
-        {
-            "name": "Live Stream Notifier",
-            "description": "Firefox extension for observing the state of streams on multiple platforms",
-            "highlights": [
-                "Supports many streaming platforms",
-                "3000 concurrent users at one point"
-            ],
-            "keywords": [
-                "React",
-                "JSX",
-                "JavaScript",
-                "webpack",
-                "transifex"
-            ],
-            "startDate": "2012-11-04",
-            "url": "https://streamnotifier.ch",
-            "roles": [
-                "Lead Developer"
-            ],
-            "type": "browser-extension",
-            "source": "https://github.com/freaktechnik/justintv-stream-notifications"
-        },
         {
             "name": "Musikgesellschaft Mühlethurnen",
             "description": "Event centric WordPress extension and theme",
