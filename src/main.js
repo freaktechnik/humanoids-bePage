@@ -21,18 +21,18 @@ export default function(Vue, {
         type: 'image/svg'
     });
 
-    head.meta.push({
-        name: 'msapplication-TileImage',
-        content: beImg
-    });
-
-    head.meta.push({
-        name: 'msapplication-TileColor',
-        content: '#000000'
-    });
-
-    head.meta.push({
-        name: 'theme-color',
-        content: '#2A2A2A'
-    });
+    head.meta.push(
+        {
+            name: 'msapplication-TileImage',
+            content: beImg
+        },
+        {
+            name: 'msapplication-TileColor',
+            content: '#000000'
+        },
+        {
+            name: 'theme-color',
+            content: '#2A2A2A'
+        }
+    );
 }

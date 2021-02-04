@@ -228,7 +228,7 @@ export default {
         },
         srcsetForPost(item) {
             const { sizes } = item.node.featuredMedia.mediaDetails;
-            return Object.values(sizes).filter((i) => i)
+            return Object.values(sizes).filter((image) => image)
                 .map((image) => `${image.sourceUrl} ${image.width}w`)
                 .join(', ');
         }
