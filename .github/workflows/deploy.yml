@@ -8,8 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production
-    url: https://humanoids.be
+    environment:
+      name: production
+      url: https://humanoids.be
     steps:
       - uses: actions/cache@v2
         with:
