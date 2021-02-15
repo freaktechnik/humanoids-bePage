@@ -29,7 +29,7 @@
     "@gridsome/source-wordpress": "^0.5.3",
     "@noxify/gridsome-plugin-remote-image": "^1.3.0",
     "eclint": "^2.8.1",
-    "eslint": "^7.19.0",
+    "eslint": "^7.20.0",
     "eslint-plugin-gridsome": "^1.6.1",
     "feedparser": "^2.2.10",
     "get-stream": "^6.0.0",
