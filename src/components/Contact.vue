@@ -1,7 +1,10 @@
 <template>
     <span>
         <octicon :icon="icon" />&nbsp;
-        <template v-if="type==='pgp'">PGP Fingerprint <code>{{ content }}</code></template>
+        <template v-if="type==='pgp'">PGP Fingerprint <a
+            :href="'https://keyoxide.org/' + content"
+            rel="me noopener"
+        ><code>{{ content }}</code></a></template>
         <a
             v-else
             rel="me noopener"

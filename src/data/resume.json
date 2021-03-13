@@ -108,6 +108,19 @@
                 "LUA driver development",
                 "Preact frontend with redux (reselect, sagas)"
             ]
+        },
+        {
+            "company": "Thunderbird",
+            "location": "Remote",
+            "description": "Mail Client",
+            "position": "Software Engineer",
+            "website": "https://thunderbird.net",
+            "startDate": "2021-03-08",
+            "summary": "Development on various modules of the Thunderbird mail client",
+            "highlights": [
+                "JavaScript feature development and code maintenance",
+                "Matrix client features"
+            ]
         }
     ],
     "volunteer": [
