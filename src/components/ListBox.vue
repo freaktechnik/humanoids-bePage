@@ -160,7 +160,7 @@
 <script>
 import Octicon from '../components/Octicon.vue';
 import TimeStamp from '../components/TimeStamp.vue';
-import LazyImage from 'v-lazy-image';
+import LazyImage from 'v-lazy-image/v2/v-lazy-image.es.js';
 
 const TYPE_ICONS = {
         'EDUCATION': 'book',
