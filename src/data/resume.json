@@ -116,7 +116,7 @@
             "position": "Software Engineer",
             "website": "https://thunderbird.net",
             "startDate": "2021-03-08",
-            "summary": "Development on various modules of the Thunderbird mail client",
+            "summary": "Development on various modules of the Thunderbird productivity suite",
             "highlights": [
                 "JavaScript feature development and code maintenance",
                 "Matrix client features"
@@ -751,6 +751,25 @@
             "roles": [
                 "Landscaping",
                 "Data collector"
+            ]
+        },
+        {
+            "entity": "Diplomatische Dokumente der Schweiz",
+            "name": "Informatik-Entwicklung und Datenbankpflege historischer Dokumente",
+            "url": "https://www.dodis.ch/",
+            "startDate": "2022-01-03",
+            "endDate": "2022-02-25",
+            "description": "Full stack web application development",
+            "highlights": [
+                "Angular 11/13 web applications with various UI frameworks and rxjs",
+                "Solr indexing and leaflet map rendering",
+                "Java Spring application development"
+            ],
+            "type": "civil service",
+            "roles": [
+                "Frontend developer",
+                "Backend developer",
+                "DevOps"
             ]
         }
     ],
