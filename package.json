@@ -14,7 +14,7 @@
   "dependencies": {
     "@primer/octicons": "^16.3.1",
     "gridsome": "^0.7.23",
-    "v-lazy-image": "^2.0.1"
+    "v-lazy-image": "^2.1.1"
   },
   "engines": {
     "node": ">=10.0.0"
