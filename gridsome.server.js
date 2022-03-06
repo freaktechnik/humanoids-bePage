@@ -7,26 +7,26 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const { default: mastodonGenerator } = require("megalodon"),
-    fetch = require("node-fetch"),
     Twitter = require("twitter"),
     twitterText = require("twitter-text"),
     graphql = require("gridsome/graphql"),
     FeedParser = require("feedparser"),
     getStream = require("get-stream"),
+    fetch = (...fetchArguments) => import("node-fetch").then(({ default: fetchFunction }) => fetchFunction(...fetchArguments)), //eslint-disable-line node/no-unsupported-features/es-syntax, node/no-unpublished-import
     NEXT = 1,
     ID_WIDTH = 3,
-    TALK_TYPES = [
+    TALK_TYPES = new Set([
         'talk',
         'workshop'
-    ],
-    PROJECT_TYPES = [
+    ]),
+    PROJECT_TYPES = new Set([
         'service',
         'cli',
         'library',
         'website',
         'twitch-extension',
         'browser-extension'
-    ],
+    ]),
 
     getToots = (userId, baseUrl) => {
         const mastoAPI = mastodonGenerator(
@@ -78,6 +78,7 @@ const { default: mastodonGenerator } = require("megalodon"),
             response.body.pipe(parser);
             return getStream.array(parser);
         }
+        return [];
     };
 
 module.exports = function(api) {
@@ -173,7 +174,7 @@ module.exports = function(api) {
             Toot: {
                 attachments: {
                     type: '[MicroblogAttachment]',
-                    resolve(node, args, context) {
+                    resolve(node, arguments_, context) {
                         const collection = context.store.getCollection('MicroblogAttachment');
                         return node.attachments.map((attachment) => collection.getNodeById(attachment.id));
                     }
@@ -182,7 +183,7 @@ module.exports = function(api) {
             Tweet: {
                 attachments: {
                     type: '[MicroblogAttachment]',
-                    resolve(node, args, context) {
+                    resolve(node, arguments_, context) {
                         const collection = context.store.getCollection('MicroblogAttachment');
                         return node.attachments.map((attachment) => collection.getNodeById(attachment.id));
                     }
@@ -191,7 +192,7 @@ module.exports = function(api) {
             Track: {
                 attachments: {
                     type: '[MicroblogAttachment]',
-                    resolve(node, args, context) {
+                    resolve(node, arguments_, context) {
                         const collection = context.store.getCollection('MicroblogAttachment');
                         return node.attachments.map((attachment) => collection.getNodeById(attachment.id));
                     }
@@ -221,7 +222,7 @@ module.exports = function(api) {
             talks = store.addCollection({
                 typeName: "Talk"
             }),
-            eventItems = resume.projects.filter((p) => TALK_TYPES.includes(p.type));
+            eventItems = resume.projects.filter((p) => TALK_TYPES.has(p.type));
         talks.addReference("event", "Event");
 
         for(const talk of eventItems) {
@@ -242,7 +243,7 @@ module.exports = function(api) {
         const projects = store.addCollection({
                 typeName: "Project"
             }),
-            projectItems = resume.projects.filter((p) => PROJECT_TYPES.includes(p.type));
+            projectItems = resume.projects.filter((p) => PROJECT_TYPES.has(p.type));
         for(const [
             id,
             project
