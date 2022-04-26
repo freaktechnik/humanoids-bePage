@@ -145,15 +145,6 @@ module.exports = function(api) {
                     }
                 }
             },
-            Tweet: {
-                attachments: {
-                    type: '[MicroblogAttachment]',
-                    resolve(node, arguments_, context) {
-                        const collection = context.store.getCollection('MicroblogAttachment');
-                        return node.attachments.map((attachment) => collection.getNodeById(attachment.id));
-                    }
-                }
-            },
             Track: {
                 attachments: {
                     type: '[MicroblogAttachment]',

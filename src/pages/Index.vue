@@ -421,24 +421,6 @@ export default {
                 }
             }
         }
-        tweets: allTweet(perPage: 20, sortBy: "date", order: DESC) {
-            edges {
-                node {
-                    excerpt
-                    id
-                    date
-                    path
-                    attachments {
-                        type
-                        preview
-                        alt
-                        height
-                        width
-                    }
-                    language
-                }
-            }
-        }
         tracks: allTrack(perPage: 20, sortBy: "date", order: DESC) {
             edges {
                 node {
