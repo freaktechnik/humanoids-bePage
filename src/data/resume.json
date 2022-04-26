@@ -21,12 +21,6 @@
                 "url": "https://github.com/freaktechnik"
             },
             {
-                "network": "Twitter",
-                "username": "@freaktechnik",
-                "url": "https://twitter.com/freaktechnik",
-                "id": "17444333"
-            },
-            {
                 "network": "Mastodon",
                 "username": "@freaktechnik@chaos.social",
                 "url": "https://chaos.social/@freaktechnik",

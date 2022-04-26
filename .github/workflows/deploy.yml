@@ -20,9 +20,6 @@ jobs:
       - run: npm ci --no-audit
       - run: npm run build
         name: build
-        env:
-          TWITTER_KEY: ${{ secrets.TWITTER_KEY }}
-          TWITTER_SECRET: ${{ secrets.TWITTER_SECRET }}
       - uses: kostya-ten/ssh-server-deploy@v4
         name: deploy
         with:

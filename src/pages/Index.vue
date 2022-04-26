@@ -137,7 +137,6 @@ export default {
     computed: {
         pages() {
             const mastodon = this.$page.profiles.edges.find((p) => p.node.network === 'Mastodon').node,
-                twitter = this.$page.profiles.edges.find((p) => p.node.network === 'Twitter').node,
                 funkwhale = this.$page.profiles.edges.find((p) => p.node.network === 'Funkwhale').node;
             return {
                 info: {
@@ -167,11 +166,6 @@ export default {
                     title: mastodon.username,
                     data: 'toots',
                     link: mastodon.url
-                },
-                twitter: {
-                    title: twitter.username,
-                    data: 'tweets',
-                    link: twitter.url
                 },
                 tracks: {
                     title: funkwhale.username,
@@ -258,10 +252,6 @@ export default {
                 {
                     property: 'og:image:height',
                     content: 512
-                },
-                {
-                    name: 'twitter:creator',
-                    content: this.$page.profiles.edges.find((p) => p.node.network === 'Twitter').node.username
                 },
                 {
                     name: 'twitter:image',

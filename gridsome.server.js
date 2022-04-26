@@ -7,8 +7,6 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const { default: mastodonGenerator } = require("megalodon"),
-    Twitter = require("twitter"),
-    twitterText = require("twitter-text"),
     graphql = require("gridsome/graphql"),
     FeedParser = require("feedparser"),
     getStream = require("get-stream"),
@@ -34,39 +32,6 @@ const { default: mastodonGenerator } = require("megalodon"),
             baseUrl
         );
         return mastoAPI.getAccountStatuses(userId);
-    },
-
-    getTwitterBearerToken = async (key, secret) => {
-        const creds = Buffer.from(`${encodeURIComponent(key)}:${encodeURIComponent(secret)}`).toString('base64'),
-            body = new URLSearchParams();
-        body.set('grant_type', 'client_credentials');
-        const resp = await fetch('https://api.twitter.com/oauth2/token', {
-            method: 'POST',
-            headers: {
-                Authorization: `Basic ${creds}`
-            },
-            body
-        });
-        if(resp.ok) {
-            const json = await resp.json();
-            return json.access_token;
-        }
-        throw new Error('Twitter auth failed');
-    },
-
-    getTweets = async (userId) => {
-        const token = await getTwitterBearerToken(process.env.TWITTER_KEY, process.env.TWITTER_SECRET),
-            twitter = new Twitter({
-                "consumer_key": process.env.TWITTER_KEY,
-                "consumer_secret": process.env.TWITTER_SECRET,
-                "bearer_token": token
-            });
-        return twitter.get('statuses/user_timeline', {
-            "user_id": userId,
-            "include_rts": false,
-            count: 20,
-            "tweet_mode": "extended"
-        });
     },
 
     getFeed = async (url) => {
@@ -382,52 +347,7 @@ module.exports = function(api) {
                 });
             }
         }
-
-        process.stdout.write("Loading Tweets\n");
-        try {
-            const twitterInfo = resume.basics.profiles.find((p) => p.network == 'Twitter');
-            const tweets = await getTweets(twitterInfo.id),
-                tweetStore = store.addCollection({
-                    typeName: 'Tweet'
-                }),
-                START = 0,
-                END = 1;
-            for(const tweet of tweets) {
-                const supportedMedia = ((tweet.extended_entities && tweet.extended_entities.media) || (tweet.entities && tweet.entities.media) || []).filter((a) => a.type === 'photo' || a.type === 'video');
-                let tweetText = tweet.full_text,
-                    offset = 0;
-                // This is a very crude way to remove media links and probably breaks url entities for auto linking.
-                for(const media of supportedMedia.sort((a, b) => b.indices[START] - a.indices[START])) {
-                    const start = media.indices[START] - offset,
-                        end = media.indices[END] - offset;
-                    tweetText = tweetText.slice(START, start) + tweetText.slice(end);
-                    offset += media.indices[END] - media.indices[START];
-                }
-                tweetStore.addNode({
-                    id: tweet.id_str,
-                    path: `https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}`,
-                    excerpt: twitterText.autoLink(tweetText, {
-                        urlEntities: tweet.entities.url
-                    }),
-                    date: new Date(tweet.created_at).toISOString(),
-                    attachments: supportedMedia.map((a) => {
-                        const attachment = attachmentStore.addNode({
-                            type: 'image',
-                            previewSrc: a.media_url_https,
-                            alt: a.display_url,
-                            width: a.sizes.small.w,
-                            height: a.sizes.small.h
-                        });
-                        return store.createReference('MicroblogAttachment', attachment.id);
-                    }),
-                    language: tweet.lang
-                });
-            }
-        }
-        catch(error) {
-            console.error("Error while fetching tweets", error);
-        }
-        //TODO turn mastodon and twitter user IDs into the actual usernames for URLs n stuff
+        //TODO turn mastodon user IDs into the actual usernames for URLs n stuff
 
         process.stdout.write("Loading Tracks\n");
         try {
