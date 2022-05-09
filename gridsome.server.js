@@ -214,9 +214,9 @@ module.exports = function(api) {
             });
         }
 
-        const [ today ] = new Date().toISOString.split("T");
-
-        const timeline = store.addCollection({
+        const [ today ] = new Date().toISOString()
+                .split("T"),
+            timeline = store.addCollection({
                 typeName: 'TimelineEvent'
             }),
             civilServiceItems = resume.projects.filter((p) => p.type === 'civil service');
