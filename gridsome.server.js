@@ -214,6 +214,8 @@ module.exports = function(api) {
             });
         }
 
+        const [ today ] = new Date().toISOString.split("T");
+
         const timeline = store.addCollection({
                 typeName: 'TimelineEvent'
             }),
@@ -232,7 +234,8 @@ module.exports = function(api) {
                         content: timelineEvent.summary
                     }
                 ],
-                end: timelineEvent.endDate,
+                end: timelineEvent.endDate || today,
+                hasEnded: Boolean(timelineEvent.endDate),
                 type: "work"
             });
         }
@@ -245,7 +248,8 @@ module.exports = function(api) {
                     title: timelineEvent.area,
                     content: timelineEvent.studyType
                 } ] : [],
-                end: timelineEvent.endDate,
+                end: timelineEvent.endDate || today,
+                hasEnded: Boolean(timelineEvent.endDate),
                 type: "education"
                 //graduated: timelineEvent.graduated
             });
@@ -258,7 +262,8 @@ module.exports = function(api) {
                     title: timelineEvent.entity,
                     content: timelineEvent.description
                 } ],
-                end: timelineEvent.endDate,
+                end: timelineEvent.endDate || today,
+                hasEnded: Boolean(timelineEvent.endDate),
                 type: "civil-service"
             });
         }

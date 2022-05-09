@@ -37,7 +37,7 @@
                         </p>
                         <footer>
                             <time-stamp :datetime="item.node.date" /> - <time-stamp
-                                v-if="item.node.end"
+                                v-if="item.node.hasEnded"
                                 :datetime="item.node.end"
                             /><template v-else>
                                 Now

@@ -387,12 +387,13 @@ export default {
                 }
             }
         }
-        timeline: allTimelineEvent(sortBy: "date", order: DESC) {
+        timeline: allTimelineEvent(sortBy: "end", order: DESC) {
             edges {
                 node {
                     title
                     date
                     end
+                    hasEnded
                     type
                     extra {
                         title
