@@ -1,6 +1,8 @@
 name: deploy
 on:
   push:
+    paths-ignore:
+      - '.github/**'
     branches:
       - main
   schedule:
