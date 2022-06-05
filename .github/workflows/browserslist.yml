@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: latest
       - name: Update browsers list
-        run: npx browserslist--update-db
+        run: npx browserslist --update-db
       - name: Save updated db
         run: |
           git config user.name github-actions
