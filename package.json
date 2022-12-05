@@ -34,7 +34,7 @@
     "feedparser": "^2.2.10",
     "get-stream": "^6.0.1",
     "gridsome-plugin-pwa": "^0.0.22",
-    "megalodon": "^4.1.1",
+    "megalodon": "^4.1.3",
     "node-fetch": "^3.2.1"
   }
 }
