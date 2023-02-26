@@ -48,7 +48,7 @@ export default {
                 return pronoun;
             }
         },
-        pronountLink() {
+        pronounLink() {
             return `https://pronoun.is/${this.pronounString}`;
         }
     }
