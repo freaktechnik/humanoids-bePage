@@ -2,7 +2,7 @@
     "$schema": "https://github.com/jsonresume/resume-schema/raw/v1.0.0/schema.json",
     "basics": {
         "name": "Martin Giger",
-        "label": "Software Development Engineer",
+        "label": "Software Developer",
         "picture": "https://humanoids.be/resume.jpg",
         "email": "martin@humanoids.be",
         "phone": "",
