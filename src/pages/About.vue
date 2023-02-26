@@ -45,7 +45,7 @@ export default {
 };
 </script>
 
-<page-query>
+<page-query lang="graphql">
     query About {
         metadata {
             name

@@ -10,6 +10,7 @@
                 :datetime="$static.metadata.dateOfBirth"
             />
         </p>
+        <p><a href="https://pronoun.is/{{ pronounString }}">{{ expandedPronouns }}</a></p>
     </div>
 </template>
 
@@ -22,17 +23,42 @@ export default {
     components: {
         Octicon,
         TimeStamp
+    },
+    computed: {
+        pronounString() {
+            return this.$static.metadata.pronouns.join("/");
+        },
+        expandedPronouns() {
+            if(this.$static.metadata.pronouns.length > 1) {
+                return this.pronounString;
+            }
+            const [ pronoun ] = this.$static.metadata.pronouns;
+            switch(pronoun) {
+            case "he":
+            case "him":
+                return "he/him";
+            case "she":
+            case "her":
+                return "she/her";
+            case "they":
+            case "them":
+                return "they/them";
+            default:
+                return pronoun;
+            }
+        }
     }
 };
 </script>
 
-<static-query>
+<static-query lang="graphql">
     query Info {
         metadata {
             city
             country
             dateOfBirth
             teaser
+            pronouns
         }
     }
 </static-query>

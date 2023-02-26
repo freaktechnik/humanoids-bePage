@@ -39,6 +39,7 @@
             }
         ],
         "pgp": "AE530058EFE7FD60",
+        "pronouns": ["he"],
         "dateOfBirth": "1995-03-21"
     },
     "work": [
@@ -393,10 +394,11 @@
             ],
             "startDate": "2016-10-26",
             "roles": [
-                "Lead Developer"
+                "Developer"
             ],
             "type": "service",
-            "source": "https://github.com/mozillach/gh-projects-content-queue"
+            "url": "https://github.com/content-queue",
+            "source": "https://github.com/content-queue/template"
         },
         {
             "name": "Emotes Showcase",
@@ -495,25 +497,6 @@
             "source": "https://github.com/freaktechnik/transifex-loader"
         },
         {
-            "name": "Twitch Chatlog",
-            "description": "Download the full chatlogs belonging to a Twitch VOD",
-            "highlights": [
-                "Displays badges as colored UTF-8 characters",
-                "Supports displaying emotes in terminals with image output",
-                "Can output to JSON for further processing"
-            ],
-            "keywords": [
-                "JavaScript"
-            ],
-            "startDate": "2016-07-21",
-            "url": "https://www.npmjs.com/package/twitch-chatlog",
-            "roles": [
-                "Lead Developer"
-            ],
-            "type": "cli",
-            "source": "https://github.com/freaktechnik/twitch-chatlog"
-        },
-        {
             "name": "get-firefox",
             "description": "Download Firefox binaries from the CLI",
             "highlights": [
@@ -565,25 +548,6 @@
             ],
             "type": "browser-extension",
             "source": "https://github.com/freaktechnik/netatmo-indicator"
-        },
-        {
-            "name": "radio-hoster",
-            "description": "Automatically hosts Talk Shows on a Twitch channel to create a talk radio-like experience",
-            "highlights": [
-                "Filters out 24/7 shows for more varied content",
-                "Can host shows scheduled for certain time slots with priority"
-            ],
-            "keywords": [
-                "JavaScript",
-                "Heroku"
-            ],
-            "startDate": "2017-08-21",
-            "url": "https://twitch.tv/hostedradio",
-            "roles": [
-                "Lead Developer"
-            ],
-            "type": "service",
-            "source": "https://github.com/freaktechnik/radio-hoster"
         },
         {
             "name": "Mozilla & Open Source",
@@ -765,11 +729,26 @@
                 "Backend developer",
                 "DevOps"
             ]
+        },
+        {
+            "entity": "Diplomatische Dokumente der Schweiz",
+            "name": "Informatik-Entwicklung und Datenbankpflege historischer Dokumente",
+            "url": "https://www.dodis.ch/",
+            "startDate": "2023-03-27",
+            "endDate": "2022-05-19",
+            "description": "Full stack web application development",
+            "highlights": [],
+            "type": "civil service",
+            "roles": [
+                "Frontend developer",
+                "Backend developer",
+                "DevOps"
+            ]
         }
     ],
     "meta": {
         "canonical": "https://humanoids.be/resume.json",
-        "version": "1.0.0",
-        "lastModified": "2020-11-10"
+        "version": "1.0.1",
+        "lastModified": "2022-12-07"
     }
 }

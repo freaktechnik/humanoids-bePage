@@ -273,6 +273,7 @@ module.exports = function(api) {
         store.addMetadata('city', resume.basics.location.city);
         store.addMetadata('dateOfBirth', resume.basics.dateOfBirth);
         store.addMetadata('teaser', resume.basics.summary);
+        store.addMetadata('pronouns', resume.basics.pronouns);
 
 
         const profiles = store.addCollection({

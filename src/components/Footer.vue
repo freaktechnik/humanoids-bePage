@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<static-query>
+<static-query lang="graphql">
     query {
         metadata {
             siteName

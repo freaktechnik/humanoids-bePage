@@ -34,7 +34,7 @@ export default {
 };
 </script>
 
-<page-query>
+<page-query lang="graphql">
     query Archive {
         metadata {
             siteUrl
