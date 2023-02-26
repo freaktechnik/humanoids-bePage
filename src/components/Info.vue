@@ -29,7 +29,7 @@ export default {
             return this.$static.metadata.pronouns.join("/");
         },
         expandedPronouns() {
-            if(this.$static.metadata.pronouns.length > 1) {
+            if(this.$static.metadata.pronouns.length) {
                 return this.pronounString;
             }
             const [ pronoun ] = this.$static.metadata.pronouns;
