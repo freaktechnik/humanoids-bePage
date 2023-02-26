@@ -735,7 +735,7 @@
             "name": "Informatik-Entwicklung und Datenbankpflege historischer Dokumente",
             "url": "https://www.dodis.ch/",
             "startDate": "2023-03-27",
-            "endDate": "2022-05-19",
+            "endDate": "2023-05-19",
             "description": "Full stack web application development",
             "highlights": [],
             "type": "civil service",
@@ -748,7 +748,7 @@
     ],
     "meta": {
         "canonical": "https://humanoids.be/resume.json",
-        "version": "1.0.1",
-        "lastModified": "2022-12-07"
+        "version": "1.0.2",
+        "lastModified": "2023-02-26"
     }
 }
