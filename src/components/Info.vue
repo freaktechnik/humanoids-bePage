@@ -10,7 +10,7 @@
                 :datetime="$static.metadata.dateOfBirth"
             />
         </p>
-        <p><a href="https://pronoun.is/{{ pronounString }}">{{ expandedPronouns }}</a></p>
+        <p><a :href="pronounLink">{{ expandedPronouns }}</a></p>
     </div>
 </template>
 
@@ -29,7 +29,8 @@ export default {
             return this.$static.metadata.pronouns.join("/");
         },
         expandedPronouns() {
-            if(this.$static.metadata.pronouns.length) {
+            const ONE_PRONOUN = 1;
+            if(this.$static.metadata.pronouns.length > ONE_PRONOUN) {
                 return this.pronounString;
             }
             const [ pronoun ] = this.$static.metadata.pronouns;
@@ -46,6 +47,9 @@ export default {
             default:
                 return pronoun;
             }
+        },
+        pronountLink() {
+            return `https://pronoun.is/${this.pronounString}`;
         }
     }
 };
