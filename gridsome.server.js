@@ -9,7 +9,7 @@
 const { default: mastodonGenerator } = require("megalodon"),
     graphql = require("gridsome/graphql"),
     FeedParser = require("feedparser"),
-    getStream = require("get-stream"),
+    { Readable } = require("stream"),
     fetch = (...fetchArguments) => import("node-fetch").then(({ default: fetchFunction }) => fetchFunction(...fetchArguments)), //eslint-disable-line node/no-unsupported-features/es-syntax, node/no-unpublished-import
     NEXT = 1,
     ID_WIDTH = 3,
@@ -41,7 +41,10 @@ const { default: mastodonGenerator } = require("megalodon"),
             response = await fetch(url);
         if(response.ok) {
             response.body.pipe(parser);
-            return getStream.array(parser);
+            return new Readable({
+                objectMode: true
+            }).wrap(parser)
+                .toArray();
         }
         return [];
     };
