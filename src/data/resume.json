@@ -737,7 +737,27 @@
             "startDate": "2023-03-27",
             "endDate": "2023-05-19",
             "description": "Full stack web application development",
-            "highlights": [],
+            "highlights": [
+                "Solr to OpenSearch migration"
+            ],
+            "type": "civil service",
+            "roles": [
+                "Frontend developer",
+                "Backend developer",
+                "DevOps"
+            ]
+        },
+        {
+            "entity": "Diplomatische Dokumente der Schweiz",
+            "name": "Informatik-Entwicklung und Datenbankpflege historischer Dokumente",
+            "url": "https://www.dodis.ch/",
+            "startDate": "2024-01-08",
+            "endDate": "2023-02-10",
+            "description": "Full stack web application development",
+            "highlights": [
+                "XEditor application maintenance",
+                "Angular SSR optimization"
+            ],
             "type": "civil service",
             "roles": [
                 "Frontend developer",
@@ -748,7 +768,7 @@
     ],
     "meta": {
         "canonical": "https://humanoids.be/resume.json",
-        "version": "1.0.2",
-        "lastModified": "2023-02-26"
+        "version": "1.0.3",
+        "lastModified": "2024-02-13"
     }
 }
