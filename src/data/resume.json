@@ -108,7 +108,7 @@
             "company": "Thunderbird",
             "location": "Remote",
             "description": "Mail Client",
-            "position": "Software Engineer",
+            "position": "Staff Software Engineer",
             "website": "https://thunderbird.net",
             "startDate": "2021-03-08",
             "summary": "Development on various modules of the Thunderbird productivity suite",
@@ -155,6 +155,7 @@
             "position": "Volunteer Developer/Support",
             "website": "https://mozilla.org",
             "startDate": "2010-04-01",
+            "endDate": "2021-03-30",
             "summary": "Multiple code contributions in various products as well as assistance to community developers",
             "highlights": [
                 "IRCv3 patches for Thunderbird (and Instantbird)",
@@ -378,27 +379,6 @@
             ],
             "type": "library",
             "source": "https://github.com/freaktechnik/eslint-plugin-array-func"
-        },
-        {
-            "name": "GitHub Projects Content Queue",
-            "description": "GitHub Projects based Tweet management",
-            "highlights": [
-                "Automated triaging of incoming mentions",
-                "Multiple sources for potential tweets",
-                "Scheduling and rate limit function for outgoing tweets",
-                "Support for Mastodon and Twitter"
-            ],
-            "keywords": [
-                "JavaScript",
-                "Docker"
-            ],
-            "startDate": "2016-10-26",
-            "roles": [
-                "Developer"
-            ],
-            "type": "service",
-            "url": "https://github.com/content-queue",
-            "source": "https://github.com/content-queue/template"
         },
         {
             "name": "Emotes Showcase",
@@ -768,7 +748,7 @@
     ],
     "meta": {
         "canonical": "https://humanoids.be/resume.json",
-        "version": "1.0.4",
-        "lastModified": "2024-02-13"
+        "version": "1.0.5",
+        "lastModified": "2024-06-06"
     }
 }
