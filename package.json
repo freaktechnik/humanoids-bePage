@@ -30,7 +30,7 @@
     "@gridsome/source-wordpress": "https://gitpkg.now.sh/gridsome/gridsome/packages/source-wordpress?9bfb365358d4949dcd21d25ba8f2f468f26ae895",
     "@noxify/gridsome-plugin-remote-image": "^1.4.0",
     "eclint": "^2.8.1",
-    "eslint": "^7.32.0",
+    "eslint": "^9.5.0",
     "eslint-plugin-gridsome": "^1.6.2",
     "feedparser": "^2.2.10",
     "gridsome-plugin-pwa": "^0.0.22",
