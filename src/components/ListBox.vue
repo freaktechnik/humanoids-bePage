@@ -75,8 +75,6 @@
                         <h1>
                             <a
                                 :href="item.node.link"
-                                :hreflang="item.node.language.length && item.node.language[0].title.replace('_', '-')"
-                                :lang="item.node.language.length && item.node.language[0].title.replace('_', '-')"
                                 v-html="item.node.title"
                             />
                         </h1>
@@ -91,7 +89,6 @@
                         </figure>
                         <article
                             v-html="item.node.excerpt"
-                            :lang="item.node.language.length && item.node.language[0].title.replace('_', '-')"
                         />
                         <footer>
                             <time-stamp :datetime="item.node.date" />

@@ -381,9 +381,6 @@ export default {
                         }
                     }
                     id
-                    language {
-                        title
-                    }
                 }
             }
         }
