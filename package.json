@@ -23,7 +23,7 @@
   "devDependencies": {
     "@freaktechnik/eslint-config-browser": "^8.0.2",
     "@freaktechnik/eslint-config-node": "^8.0.2",
-    "@freaktechnik/eslint-config-vue": "^8.0.2",
+    "@freaktechnik/eslint-config-vue": "^10.2.0",
     "@freaktechnik/eslint-config-webpack": "^8.0.2",
     "@gridsome/plugin-critical": "^0.2.0",
     "@gridsome/plugin-sitemap": "^0.4.0",
