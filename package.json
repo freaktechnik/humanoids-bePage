@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@primer/octicons": "^19.18.0",
-    "@vue/runtime-dom": "^3.5.20",
+    "@vue/runtime-dom": "^3.5.22",
     "gridsome": "^0.7.23",
     "v-lazy-image": "^2.1.1"
   },
