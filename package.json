@@ -27,7 +27,7 @@
     "@freaktechnik/eslint-config-webpack": "^8.0.2",
     "@gridsome/plugin-critical": "^0.2.0",
     "@gridsome/plugin-sitemap": "^0.4.0",
-    "@gridsome/source-wordpress": "https://gitpkg.now.sh/gridsome/gridsome/packages/source-wordpress?a5614a92a6c81bce9d440d8a9ae86835ed864d3e",
+    "@gridsome/source-wordpress": "https://api.github.com/repos/freaktechnik/gridsome/tarball/6fb129fdc784180ed487359487e6d48e7ebf662b",
     "@noxify/gridsome-plugin-remote-image": "^1.4.0",
     "eclint": "^2.8.1",
     "eslint": "^7.32.0",
