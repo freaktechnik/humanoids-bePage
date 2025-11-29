@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: 'lts/gallium'
           cache: 'npm'
-      - run: npm ci --no-audit
+      - run: npm ci --no-audit -f
       - run: npm run build
         name: build
       - uses: kostya-ten/ssh-server-deploy@v4
