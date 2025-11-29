@@ -9,7 +9,7 @@ jobs:
         with:
           node-version: 'lts/*'
           cache: 'npm'
-      - run: npm ci --no-audit -f
+      - run: npm ci --no-audit
       - run: npm run lint:js
   lint-ec:
     runs-on: ubuntu-latest
