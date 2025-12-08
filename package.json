@@ -12,7 +12,7 @@
     "test": "npm run lint"
   },
   "dependencies": {
-    "@primer/octicons": "^19.21.0",
+    "@primer/octicons": "^19.21.1",
     "@vue/runtime-dom": "^3.5.25",
     "gridsome": "^0.7.23",
     "v-lazy-image": "^2.1.1"
