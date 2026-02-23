@@ -30,7 +30,7 @@
     "@gridsome/source-wordpress": "https://api.github.com/repos/freaktechnik/gridsome/tarball/6fb129fdc784180ed487359487e6d48e7ebf662b",
     "@noxify/gridsome-plugin-remote-image": "^1.4.0",
     "eclint": "^2.8.1",
-    "eslint": "^7.32.0",
+    "eslint": "^10.0.1",
     "eslint-plugin-gridsome": "^1.6.2",
     "feedparser": "^2.2.10",
     "gridsome-plugin-pwa": "^0.0.22",
