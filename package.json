@@ -32,7 +32,7 @@
     "eclint": "^2.8.1",
     "eslint": "^7.32.0",
     "eslint-plugin-gridsome": "^1.6.2",
-    "feedparser": "^2.2.10",
+    "feedparser": "^2.3.0",
     "gridsome-plugin-pwa": "^0.0.22",
     "megalodon": "^10.2.4",
     "node-fetch": "^3.2.1"
