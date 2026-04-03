@@ -35,7 +35,7 @@
                 "network": "Funkwhale",
                 "username": "@djid3ot@music.humanoids.be",
                 "url": "https://music.humanoids.be/channels/djid3ot",
-                "feed": "https://music.humanoids.be/api/v1/channels/djid3ot/rss"
+                "feed": "https://music.humanoids.be/api/v2/channels/djid3ot/rss"
             }
         ],
         "pgp": "AE530058EFE7FD60",
