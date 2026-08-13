@@ -15,7 +15,8 @@
     "@primer/octicons": "^19.33.0",
     "@vue/runtime-dom": "^3.5.41",
     "gridsome": "^0.7.23",
-    "v-lazy-image": "^2.1.1"
+    "v-lazy-image": "^2.1.1",
+    "vue-server-renderer": "^2.7.16"
   },
   "engines": {
     "node": ">=16.15.0"
