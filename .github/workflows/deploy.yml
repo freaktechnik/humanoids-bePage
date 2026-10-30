@@ -23,6 +23,8 @@ jobs:
       - run: npm ci --no-audit
       - run: npm run build
         name: build
+        env:
+          MASTODON_ACCESS_TOKEN: ${{ secrets.MASTODON_ACCESS_TOKEN }}
       - uses: kostya-ten/ssh-server-deploy@v4
         name: deploy
         with:

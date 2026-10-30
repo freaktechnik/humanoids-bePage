@@ -29,7 +29,9 @@ const { default: mastodonGenerator } = require("megalodon"),
     getToots = (userId, baseUrl) => {
         const mastoAPI = mastodonGenerator(
             'mastodon',
-            baseUrl
+            baseUrl,
+            process.env.MASTODON_ACCESS_TOKEN,
+            "humanoids bePage Content"
         );
         return mastoAPI.getAccountStatuses(userId);
     },
