@@ -2,6 +2,7 @@ name: Update browserslist
 on:
   schedule:
   - cron: "15 14 * * 3"
+  workflow_dispatch:
 
 jobs:
   update:
@@ -14,6 +15,8 @@ jobs:
         with:
           node-version: latest
           cache: 'npm'
+      - name: Allow the tarball for the fixed wp plugin
+        run: echo "allow-remote=api.github.com" > .npmrc
       - name: Update browsers list
         run: npx --yes update-browserslist-db@latest
       - name: Check for Changes
